@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>java annotation (1) | 憨憨呆呆看人间</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在各种流行的Java开发框架比如Spring boot中，大量使用了注解Annotation来做自动化配置。学习Spring有必要先了解一下注解。注解是从Java 1.5版本开始加入到Java语言中的，因其便利性逐渐被Java开发者广泛接受。那么，注解到底是什么东西呢？ 注解的定义就个人理解，注解就是贴在程序源码上的语法标签，为编译器和JVM提供关于被贴代码（类、方法、构造函数、变量、参数等等）的">
+<meta name="keywords" content="annotation">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java annotation (1)">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;11&#x2F;java%20annotation%201&#x2F;index.html">
+<meta property="og:site_name" content="憨憨呆呆看人间">
+<meta property="og:description" content="在各种流行的Java开发框架比如Spring boot中，大量使用了注解Annotation来做自动化配置。学习Spring有必要先了解一下注解。注解是从Java 1.5版本开始加入到Java语言中的，因其便利性逐渐被Java开发者广泛接受。那么，注解到底是什么东西呢？ 注解的定义就个人理解，注解就是贴在程序源码上的语法标签，为编译器和JVM提供关于被贴代码（类、方法、构造函数、变量、参数等等）的">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-12-25T10:30:06.158Z">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="憨憨呆呆看人间" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">憨憨呆呆看人间</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">ocre&#39;s tech blog</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-java annotation 1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/11/java%20annotation%201/" class="article-date">
+  <time datetime="2019-12-11T01:45:02.000Z" itemprop="datePublished">2019-12-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      java annotation (1)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在各种流行的Java开发框架比如Spring boot中，大量使用了注解Annotation来做自动化配置。学习Spring有必要先了解一下注解。<br>注解是从Java 1.5版本开始加入到Java语言中的，因其便利性逐渐被Java开发者广泛接受。那么，注解到底是什么东西呢？</p>
+<h3 id="注解的定义"><a href="#注解的定义" class="headerlink" title="注解的定义"></a>注解的定义</h3><p>就个人理解，注解就是贴在程序源码上的语法标签，为编译器和JVM提供关于被贴代码（类、方法、构造函数、变量、参数等等）的一些辅助信息，这些信息可以帮助编译器做一些额外处理（比如@Overrride注解告诉编译器需要检查是否真的做了方法覆盖），或者让JVM在加载这段代码时做必要的前置工作（比如@DependsOn注解告知JVM需要先加载所依赖的类）。<br>我看到的比较靠谱的注解定义<a href="https://www.geeksforgeeks.org/annotations-in-java/" target="_blank" rel="noopener">在这里</a>。</p>
+<h3 id="元注解"><a href="#元注解" class="headerlink" title="元注解"></a>元注解</h3><p>Java语言提供如下元注解：</p>
+<ul>
+<li>@Override<br>典型的标记类注解，作用是明确告知编译器该方法Override了基类、接口、Object等的共有方法。编译器将对该注解标记的方法进行检查，若发现不符合Override定义，会直接报错。</li>
+<li>@Deprecated<br>标记类注解，标记方法已被弃用。如果有人继续使用该方法，编译器将抛出警告⚠️。</li>
+<li>@SuppressWarnings<br>让编译器忽略指定的一种或多种编译器警告。</li>
+<li>@Retention<br>指定被它标记的注解的存储位置，从而决定它的生命周期。比如<code>RetentionPolicy.SOURCE</code>  定义注解只存储在源码中，不会被编译进.class文件，那么注解的生命周期也就被限制在源码编译成字节码之前。 默认值为<code>RetentionPolicy.CLASS</code>。</li>
+<li>@Target<br>指定被它标记的注解的作用目标。目前取值有<code>TYPE</code>,<code>FIELD</code>,<code>METHOD</code>,<code>PARAMETER</code>,<code>CONSTRUCTOR</code>,<code>LOCAL_VARIABLE</code>,<code>ANNOTATION_TYPE</code>,<code>PACKAGE</code>,<code>TYPE_PARAMETER</code>,<code>TYPE_USE</code>。</li>
+<li>@Documented<br>标记文档生成工具在生成的文档中包含被它标记的注解。</li>
+<li>@Inherited<br>定义Java子类在继承父类时，同时继承拥有这个元注解的注解。注意，只针对普通类之间的继承，接口继承、接口实现时不会继承注解。</li>
+<li>@Repeatable<br>定义注解可以多次重复应用于相同的目标Target。</li>
+<li>@Native<br>标记目标常量可以被native代码引用。</li>
+<li>@FunctionalInterface<br>该注解用于标记函数式接口。加上该注解后，若编写的接口不符合函数式接口的定义，编译器将报错。</li>
+<li>@SafeVarargs<br>针对可变参数构造函数或方法生效，让编译器忽略unchecked警告⚠️。</li>
+</ul>
+<h3 id="自定义注解"><a href="#自定义注解" class="headerlink" title="自定义注解"></a>自定义注解</h3><p>  我们可以通过组合现有注解的方式来定义新的注解。注解的定义语法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">[Access Specifier] @interface &lt;AnnotationName&gt; &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  DataType &lt;Method Name&gt;() [default Value];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+<p>参照以上语法和现有元注解，我们可以自定义如下新注解：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">@Target(ElementType.TYPE)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">@Retention(RetentionPolicy.RUNTIME)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">public @interface HelloAnnotation &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  String value() default &quot;Hi&quot;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+<p>然后，可以像其他注解一样使用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">@HelloAnnotation(&quot;Hello&quot;)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">public class MyApplication &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  public static void main(String[] args) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    HelloAnnotation annotation &#x3D; MyApplication.class.getAnnotation(HelloAnnotation.class);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    System.out.println(annotation.value());</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/12/11/java%20annotation%201/" data-id="ck4zjyn8l0001i0w291if64p1" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/annotation/" rel="tag">annotation</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/12/25/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/12/08/hexo-with-netlify/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">使用netlify自动发布hexo博客</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/annotation/" rel="tag">annotation</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/annotation/" style="font-size: 10px;">annotation</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/12/25/test%20upload%20pic/">test upload pic</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/25/spring-ioc/">spring-ioc</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/25/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/11/java%20annotation%201/">java annotation (1)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/08/hexo-with-netlify/">使用netlify自动发布hexo博客</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 ocre<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

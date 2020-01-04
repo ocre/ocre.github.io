@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Homebrew每次装软件都卡在更新界面怎么办？ | 憨憨呆呆看人间</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="自从用上Mac，Homebrew就成了一个绕不开的工具。Homebrew是Mac的软件包管理工具，作用相当于CentOS上的yum。Mac上的好多软件，都需要用Homebrew安装。基本上使用brew install &amp;lt;packageName&amp;gt;或者brew cask install &amp;lt;packageName&amp;gt;就能一步到位装好软件了。但是头疼的是，我在运行brew insta">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Homebrew每次装软件都卡在更新界面怎么办？">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;08&#x2F;accelerate-homebrew-install&#x2F;index.html">
+<meta property="og:site_name" content="憨憨呆呆看人间">
+<meta property="og:description" content="自从用上Mac，Homebrew就成了一个绕不开的工具。Homebrew是Mac的软件包管理工具，作用相当于CentOS上的yum。Mac上的好多软件，都需要用Homebrew安装。基本上使用brew install &amp;lt;packageName&amp;gt;或者brew cask install &amp;lt;packageName&amp;gt;就能一步到位装好软件了。但是头疼的是，我在运行brew insta">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;006tNbRwly1g9o9r4bbrdj30ta026dfs.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;006tNbRwly1g9oa2txfudj30v605mt9b.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;006tNbRwly1g9ojpggsjrj30v40c0ac4.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;006tNbRwly1g9oapkonfej30ym09q0u7.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;006tNbRwly1g9obm2zg75j312g0nudhq.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;006tNbRwly1g9oi1oqzw3j30km0akt90.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;006tNbRwly1g9oikrji0tj315i0me78p.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;006tNbRwly1g9oiwq89r3j30y40b8myx.jpg">
+<meta property="og:updated_time" content="2019-12-25T08:25:17.488Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;006tNbRwly1g9o9r4bbrdj30ta026dfs.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="憨憨呆呆看人间" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">憨憨呆呆看人间</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">ocre&#39;s tech blog</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-accelerate-homebrew-install" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/08/accelerate-homebrew-install/" class="article-date">
+  <time datetime="2019-12-08T03:15:03.000Z" itemprop="datePublished">2019-12-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Homebrew每次装软件都卡在更新界面怎么办？
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>自从用上Mac，Homebrew就成了一个绕不开的工具。Homebrew是Mac的软件包管理工具，作用相当于CentOS上的yum。Mac上的好多软件，都需要用Homebrew安装。基本上使用<code>brew install &lt;packageName&gt;</code>或者<code>brew cask install &lt;packageName&gt;</code>就能一步到位装好软件了。但是头疼的是，我在运行<code>brew install</code>的时候，经常会提示<code>Updating Homebrew...</code>，然后卡住好几分钟，也不知道后台实际上在干些什么，体验很不好。截图如下：<br><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9o9r4bbrdj30ta026dfs.jpg" alt="brew install 时卡住了。。。"></p>
+<p>一般遇到这种情况，直接使用<code>control + C</code>快捷键就可以打断更新，直接进入后续的install环节。<br><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9oa2txfudj30v605mt9b.jpg" alt="control + C打断更新"><br><code>control + C</code>一时爽，可是如果每次都要这样操作，却有违俺样的美学。所谓知其然，还要知其所以然。于是收集各种网上资料，并结合自己的实践测试了一下，对卡顿原因有了一定的了解。</p>
+<h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><p>检查Homebrew脚本代码 <code>/usr/local/Homebrew/Library/Homebrew/brew.sh</code>可以发现，Homebrew在执行install操作时，默认会先去更新自己。</p>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9ojpggsjrj30v40c0ac4.jpg" alt=""></p>
+<p>而更新操作，实际上是调用git pull从Homebrew位于github的官方镜像仓库拉取最新的版本到本地仓库（即Homebrew的安装目录）。如果github被墙或者访问速度太慢，就会出现卡顿现象。<br><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9oapkonfej30ym09q0u7.jpg" alt="check official repository"></p>
+<p>可以使用<code>brew update --verbose</code>测试一下实际的更新速度，感受一下实际的卡顿：</p>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9obm2zg75j312g0nudhq.jpg" alt=""></p>
+<h2 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h2><p>弄明白原因后，就可以对症下药了。</p>
+<p>总的来说，要解决这个卡顿问题，有三种方法： 一是简单粗暴直接禁用brew update，二是使用国内镜像源，三是延长update的检查时间间隔。</p>
+<h3 id="方法1-禁用brew-update"><a href="#方法1-禁用brew-update" class="headerlink" title="方法1: 禁用brew update"></a>方法1: 禁用brew update</h3><p>设置环境变量<code>HOMEBREW_NO_AUTO_UPDATE</code>即可。<br>这里需要区分一下shell种类，可以使用<code>echo $SHELL</code>命令查看。<br>针对<code>/bin/zsh</code>, 执行如下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">echo &#39;export HOMEBREW_NO_AUTO_UPDATE&#x3D;true&#39; &gt;&gt; ~&#x2F;.zshrc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">source ~&#x2F;.zshrc</span></pre></td></tr></table></figure>
+<p>针对<code>/bin/bash</code>, 执行如下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">echo &#39;export HOMEBREW_NO_AUTO_UPDATE&#x3D;true&#39; &gt;&gt; ~&#x2F;.bash_profile</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">source ~&#x2F;.bash_profile</span></pre></td></tr></table></figure>
+<p>禁用之后，如果需要更新brew包，可以执行如下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">brew update &amp;&amp; brew upgrade &amp;&amp; brew cleanup ; say brew updated</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">brew update &amp;&amp; brew upgrade brew-cask &amp;&amp; brew cleanup ; say brew-cask updated</span></pre></td></tr></table></figure>
+<h3 id="方法2-更换更快的镜像源"><a href="#方法2-更换更快的镜像源" class="headerlink" title="方法2: 更换更快的镜像源"></a>方法2: 更换更快的镜像源</h3><p>可选的镜像源有：</p>
+<ul>
+<li>清华：<a href="git://mirrors.tuna.tsinghua.edu.cn/homebrew.git" target="_blank" rel="noopener">git://mirrors.tuna.tsinghua.edu.cn/homebrew.git</a></li>
+<li>中科大：<a href="http://mirrors.ustc.edu.cn/homebrew.git" target="_blank" rel="noopener">http://mirrors.ustc.edu.cn/homebrew.git</a></li>
+<li>Coding.net：<a href="https://git.coding.net/homebrew/homebrew.git" target="_blank" rel="noopener">https://git.coding.net/homebrew/homebrew.git</a><br>这里我使用了清华的<a href="https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/" target="_blank" rel="noopener">镜像源</a>，操作命令如下：<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">git -C "$(brew --repo)" remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">git -C "$(brew --repo homebrew/core)" remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">git -C "$(brew --repo homebrew/cask)" remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-cask.git</span></pre></td></tr></table></figure>
+顺便也可以设置一下Homebrew二进制预编译包的镜像地址，具体需要通过设置环境变量<code>HOMEBREW_BOTTLE_DOMAIN</code>来实现。这里也需要区分一下shell版本：</li>
+</ul>
+<p>如果使用 <code>/bin/zsh</code>， 则执行如下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">echo &#39;export HOMEBREW_BOTTLE_DOMAIN&#x3D;https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;homebrew-bottles&#39; &gt;&gt; ~&#x2F;.zshrc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">source ~&#x2F;.zshrc</span></pre></td></tr></table></figure>
+<p>而如果使用为<code>/bin/bash</code>，则执行如下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">echo &#39;export HOMEBREW_BOTTLE_DOMAIN&#x3D;https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;homebrew-bottles&#39; &gt;&gt; ~&#x2F;.bash_profile</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">source ~&#x2F;.bash_profile</span></pre></td></tr></table></figure>
+<p>然后重新执行一下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">cd $home</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">brew update</span></pre></td></tr></table></figure>
+<p>装两个软件试试：<br><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9oi1oqzw3j30km0akt90.jpg" alt="brew_install_test"><br>卡顿有了明显改善。:)</p>
+<h3 id="方法3-延长自动update的检查间隔时间"><a href="#方法3-延长自动update的检查间隔时间" class="headerlink" title="方法3: 延长自动update的检查间隔时间"></a>方法3: 延长自动update的检查间隔时间</h3><p>通过阅读源码或帮助文档manpage，发现可以通过设置环境变量<code>HOMEBREW_AUTO_UPDATE_SECS</code>来控制检查更新的间隔时间。<br><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9oikrji0tj315i0me78p.jpg" alt="auto_update_secs_env_var"></p>
+<p>在近期发布的Homebrew 2.2.0版本，也提到了一个主要更新feature：</p>
+<ul>
+<li><a href="https://www.oschina.net/news/111734/homebrew-2-2-0-released" target="_blank" rel="noopener">HOMEBREW_AUTO_UPDATE_SECS 的无操作情况明显更快，默认为 5 分钟（而不是 1 分钟）。</a></li>
+</ul>
+<p>这在homebrew/brew的代码中也得到了证实：</p>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9oiwq89r3j30y40b8myx.jpg" alt="update_secs"></p>
+<p>可见，Homebrew官方自己也认为这个时间设置的太短了没啥意义。</p>
+<p>考虑到我们装软件是个低频操作，不会天天装软件，犯不着每次装软件都去检查一次更新。这个环境变量的取值可以设置的大胆一些，比如一个月，或着两周。设置方法跟本文中其他环境变量的方式相同，这里不再赘述。</p>
+<p>注意，这种方法只是尽可能延迟检查更新的时间，达到减少更新次数的目的，并不能完全避免卡顿，所以显得比较鸡肋。个人更喜欢第二种方法，更换更快的镜像源。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/12/08/accelerate-homebrew-install/" data-id="ck4zjyn9a0004i0w267dx15mv" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/12/08/hexo-with-netlify/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          使用netlify自动发布hexo博客
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/12/08/log-this-hexo-setup/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">log this hexo setup</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/annotation/" rel="tag">annotation</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/annotation/" style="font-size: 10px;">annotation</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/12/25/test%20upload%20pic/">test upload pic</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/25/spring-ioc/">spring-ioc</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/25/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/11/java%20annotation%201/">java annotation (1)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/08/hexo-with-netlify/">使用netlify自动发布hexo博客</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 ocre<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
