@@ -66,28 +66,6 @@
   </entry>
   
   <entry>
-    <title>如何用系统命令把文件内容复制到剪贴板</title>
-    <link href="http://example.com/2023/11/20/how-to-copy-file-content-to-clipboard/"/>
-    <id>http://example.com/2023/11/20/how-to-copy-file-content-to-clipboard/</id>
-    <published>2023-11-20T04:15:32.000Z</published>
-    <updated>2023-11-20T03:11:55.399Z</updated>
-    
-    <content type="html"><![CDATA[<p>换电脑后需要给<code>github</code>配置新的<code>ssh key</code>以便于通过<code>ssh</code>协议免密<code>push</code>代码。使用<code>ssh-keygen -t rsa -C &quot;xx@xx.com&quot;</code> 在本机生成<code>ssh密钥对</code>后，需要把<code>~/.id_rsa.pub</code>公钥文件的内容复制出来，再粘贴到<code>github</code>账号里。通常做法是用诸如记事本、notpad++等文本编辑软件直接打开<code>id_rsa.pub</code>文件，然后<code>Ctrl+A</code>、<code>Ctrl+C</code>复制到系统剪贴板即可。不过为了显得有技术范(装逼)，想试试直接用命令行执行这一动作。一时记不起来windows下如何用命令行复制文件内容了，查了些资料，整理如下。</p><h4 id="Windows-PowerShell"><a href="#Windows-PowerShell" class="headerlink" title="Windows PowerShell"></a>Windows PowerShell</h4><p>对于<code>PowerShell</code>, 直接使用如下命令：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat id_rsa.pub | clip</span><br></pre></td></tr></table></figure><h4 id="Windows-CommandLine"><a href="#Windows-CommandLine" class="headerlink" title="Windows CommandLine"></a>Windows CommandLine</h4><p>对于传统的<code>cmd</code>命令行，直接使用如下命令：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clip &lt; id_rsa.pub</span><br></pre></td></tr></table></figure><h3 id="Linux-Shell"><a href="#Linux-Shell" class="headerlink" title="Linux Shell"></a>Linux Shell</h3><p>对于<code>Linux</code>系统来说，反倒比较麻烦一点点，需要先安装外部小工具，<code>xsel</code>、<code>xclip</code>, 使用<code>yum</code>或<code>apt-get</code>安装都可以。<br>如果是<code>xclip</code>，直接用</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat id_rsa.pub | xclip</span><br></pre></td></tr></table></figure><p>如果是<code>xsel</code>, 使用</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat id_rsa.pub | xsel</span><br></pre></td></tr></table></figure><p>内容将复制到系统剪贴板。注意，一般云厂商提供的服务器没有配置输入输出设备，这俩命令都无效。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;换电脑后需要给&lt;code&gt;github&lt;/code&gt;配置新的&lt;code&gt;ssh key&lt;/code&gt;以便于通过&lt;code&gt;ssh&lt;/code&gt;协议免密&lt;code&gt;push&lt;/code&gt;代码。使用&lt;code&gt;ssh-keygen -t rsa -C &amp;quot;xx@xx.c</summary>
-      
-    
-    
-    
-    
-    <category term="DevOps" scheme="http://example.com/tags/DevOps/"/>
-    
-  </entry>
-  
-  <entry>
     <title>pandas中如何合并DataFrame的两列</title>
     <link href="http://example.com/2023/11/20/how-to-merge-two-dataframe-columns-with-pandas/"/>
     <id>http://example.com/2023/11/20/how-to-merge-two-dataframe-columns-with-pandas/</id>
@@ -109,6 +87,28 @@
     <category term="Python" scheme="http://example.com/tags/Python/"/>
     
     <category term="数据分析" scheme="http://example.com/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何用系统命令把文件内容复制到剪贴板</title>
+    <link href="http://example.com/2023/11/20/how-to-copy-file-content-to-clipboard/"/>
+    <id>http://example.com/2023/11/20/how-to-copy-file-content-to-clipboard/</id>
+    <published>2023-11-20T04:15:32.000Z</published>
+    <updated>2023-11-20T03:11:55.399Z</updated>
+    
+    <content type="html"><![CDATA[<p>换电脑后需要给<code>github</code>配置新的<code>ssh key</code>以便于通过<code>ssh</code>协议免密<code>push</code>代码。使用<code>ssh-keygen -t rsa -C &quot;xx@xx.com&quot;</code> 在本机生成<code>ssh密钥对</code>后，需要把<code>~/.id_rsa.pub</code>公钥文件的内容复制出来，再粘贴到<code>github</code>账号里。通常做法是用诸如记事本、notpad++等文本编辑软件直接打开<code>id_rsa.pub</code>文件，然后<code>Ctrl+A</code>、<code>Ctrl+C</code>复制到系统剪贴板即可。不过为了显得有技术范(装逼)，想试试直接用命令行执行这一动作。一时记不起来windows下如何用命令行复制文件内容了，查了些资料，整理如下。</p><h4 id="Windows-PowerShell"><a href="#Windows-PowerShell" class="headerlink" title="Windows PowerShell"></a>Windows PowerShell</h4><p>对于<code>PowerShell</code>, 直接使用如下命令：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat id_rsa.pub | clip</span><br></pre></td></tr></table></figure><h4 id="Windows-CommandLine"><a href="#Windows-CommandLine" class="headerlink" title="Windows CommandLine"></a>Windows CommandLine</h4><p>对于传统的<code>cmd</code>命令行，直接使用如下命令：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clip &lt; id_rsa.pub</span><br></pre></td></tr></table></figure><h3 id="Linux-Shell"><a href="#Linux-Shell" class="headerlink" title="Linux Shell"></a>Linux Shell</h3><p>对于<code>Linux</code>系统来说，反倒比较麻烦一点点，需要先安装外部小工具，<code>xsel</code>、<code>xclip</code>, 使用<code>yum</code>或<code>apt-get</code>安装都可以。<br>如果是<code>xclip</code>，直接用</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat id_rsa.pub | xclip</span><br></pre></td></tr></table></figure><p>如果是<code>xsel</code>, 使用</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat id_rsa.pub | xsel</span><br></pre></td></tr></table></figure><p>内容将复制到系统剪贴板。注意，一般云厂商提供的服务器没有配置输入输出设备，这俩命令都无效。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;换电脑后需要给&lt;code&gt;github&lt;/code&gt;配置新的&lt;code&gt;ssh key&lt;/code&gt;以便于通过&lt;code&gt;ssh&lt;/code&gt;协议免密&lt;code&gt;push&lt;/code&gt;代码。使用&lt;code&gt;ssh-keygen -t rsa -C &amp;quot;xx@xx.c</summary>
+      
+    
+    
+    
+    
+    <category term="DevOps" scheme="http://example.com/tags/DevOps/"/>
     
   </entry>
   
