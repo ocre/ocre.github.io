@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="我们在日常开发过程中经常会遇到这样的需求，统计某个IP的访问次数，统计某个商户的订单数 等等。这类统计统称为计数统计。作为一门优秀的高级语言，Python提供了至少4种方式来方便地实现计数统计。下面我们举例说明。首先给出问题: 给定下面的输入和输出，实现name_count方法。 123456789# Input:names &#x3D; [&amp;#x27;alice&amp;#x27;,&amp;#x27;bob&amp;#x27;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python中实现计数统计的4种方法">
+<meta property="og:url" content="http://example.com/2020/02/26/four-ways-to-count-in-python/index.html">
+<meta property="og:site_name" content="憨憨呆呆的IT之旅">
+<meta property="og:description" content="我们在日常开发过程中经常会遇到这样的需求，统计某个IP的访问次数，统计某个商户的订单数 等等。这类统计统称为计数统计。作为一门优秀的高级语言，Python提供了至少4种方式来方便地实现计数统计。下面我们举例说明。首先给出问题: 给定下面的输入和输出，实现name_count方法。 123456789# Input:names &#x3D; [&amp;#x27;alice&amp;#x27;,&amp;#x27;bob&amp;#x27;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-02-26T11:10:00.000Z">
+<meta property="article:modified_time" content="2020-03-30T08:30:12.000Z">
+<meta property="article:author" content="ocre">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2020/02/26/four-ways-to-count-in-python/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2020/02/26/four-ways-to-count-in-python/","path":"2020/02/26/four-ways-to-count-in-python/","title":"Python中实现计数统计的4种方法"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Python中实现计数统计的4种方法 | 憨憨呆呆的IT之旅</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="憨憨呆呆的IT之旅" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">憨憨呆呆的IT之旅</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">我见，我思，我行</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E4%BD%BF%E7%94%A8dict%E5%AD%97%E5%85%B8%E5%AE%9E%E7%8E%B0%E8%AE%A1%E6%95%B0%E7%BB%9F%E8%AE%A1"><span class="nav-number">1.</span> <span class="nav-text">1. 使用dict字典实现计数统计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%BD%BF%E7%94%A8defaultdict%E5%AE%9E%E7%8E%B0%E8%AE%A1%E6%95%B0%E7%BB%9F%E8%AE%A1"><span class="nav-number">2.</span> <span class="nav-text">2. 使用defaultdict实现计数统计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E4%BD%BF%E7%94%A8set%E5%92%8Clist%E5%AE%9E%E7%8E%B0%E8%AE%A1%E6%95%B0%E7%BB%9F%E8%AE%A1"><span class="nav-number">3.</span> <span class="nav-text">3. 使用set和list实现计数统计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E4%BD%BF%E7%94%A8Counter%E5%AE%9E%E7%8E%B0%E8%AE%A1%E6%95%B0%E7%BB%9F%E8%AE%A1"><span class="nav-number">4.</span> <span class="nav-text">4.使用Counter实现计数统计</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ocre</p>
+  <div class="site-description" itemprop="description">这是ocre的个人技术博客，主要记录日常接触的一些技术知识，涵盖后端开发、服务器运维、数据分析等IT领域。也会记录一些所遇问题的解决办法，以备自己和有需要的人按需查找。记录风格偏流水账一些，知识点较分散，尚未成体系，是为：憨憨呆呆的IT之旅。</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">75</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/02/26/four-ways-to-count-in-python/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ocre">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="憨憨呆呆的IT之旅">
+      <meta itemprop="description" content="这是ocre的个人技术博客，主要记录日常接触的一些技术知识，涵盖后端开发、服务器运维、数据分析等IT领域。也会记录一些所遇问题的解决办法，以备自己和有需要的人按需查找。记录风格偏流水账一些，知识点较分散，尚未成体系，是为：憨憨呆呆的IT之旅。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Python中实现计数统计的4种方法 | 憨憨呆呆的IT之旅">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Python中实现计数统计的4种方法
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-02-26 19:10:00" itemprop="dateCreated datePublished" datetime="2020-02-26T19:10:00+08:00">2020-02-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2020-03-30 16:30:12" itemprop="dateModified" datetime="2020-03-30T16:30:12+08:00">2020-03-30</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>我们在日常开发过程中经常会遇到这样的需求，统计某个IP的访问次数，统计某个商户的订单数 等等。这类统计统称为计数统计。<br>作为一门优秀的高级语言，Python提供了至少4种方式来方便地实现计数统计。下面我们举例说明。<br>首先给出问题: 给定下面的输入和输出，实现<code>name_count</code>方法。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Input:</span></span><br><span class="line">names = [<span class="string">&#x27;alice&#x27;</span>,<span class="string">&#x27;bob&#x27;</span>,<span class="string">&#x27;cindy&#x27;</span>,<span class="string">&#x27;ocre&#x27;</span>,<span class="string">&#x27;alice&#x27;</span>,<span class="string">&#x27;ocre&#x27;</span>,<span class="string">&#x27;ocre&#x27;</span>,<span class="string">&#x27;cindy&#x27;</span>,<span class="string">&#x27;tom&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Inteface</span></span><br><span class="line">result = name_count(names)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Output:</span></span><br><span class="line">&#123;<span class="string">&#x27;alice&#x27;</span>: <span class="number">2</span>, <span class="string">&#x27;bob&#x27;</span>: <span class="number">1</span>, <span class="string">&#x27;cindy&#x27;</span>: <span class="number">2</span>, <span class="string">&#x27;ocre&#x27;</span>: <span class="number">3</span>, <span class="string">&#x27;tom&#x27;</span>: <span class="number">1</span>&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-使用dict字典实现计数统计"><a href="#1-使用dict字典实现计数统计" class="headerlink" title="1. 使用dict字典实现计数统计"></a>1. 使用dict字典实现计数统计</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">name_count</span>(<span class="params">names</span>):</span><br><span class="line">    name_counts = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> name <span class="keyword">in</span> names:</span><br><span class="line">        <span class="keyword">if</span> name <span class="keyword">not</span> <span class="keyword">in</span> counts:</span><br><span class="line">            name_counts[name] = <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            name_counts[name] += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> name_counts</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-使用defaultdict实现计数统计"><a href="#2-使用defaultdict实现计数统计" class="headerlink" title="2. 使用defaultdict实现计数统计"></a>2. 使用defaultdict实现计数统计</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> defaultdict</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">name_count</span>(<span class="params">names</span>):</span><br><span class="line">    name_counts = defaultdict(<span class="keyword">lambda</span>: <span class="number">0</span>)</span><br><span class="line">    <span class="keyword">for</span> name <span class="keyword">in</span> names:</span><br><span class="line">        name_counts[name] += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> name_counts</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-使用set和list实现计数统计"><a href="#3-使用set和list实现计数统计" class="headerlink" title="3. 使用set和list实现计数统计"></a>3. 使用set和list实现计数统计</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">name_count</span>(<span class="params">names</span>):</span><br><span class="line">    name_set = <span class="built_in">set</span>(names)</span><br><span class="line">    name_list = []</span><br><span class="line">    <span class="keyword">for</span> name <span class="keyword">in</span> name_set:</span><br><span class="line">        name_list.append(name, names.count(name))</span><br><span class="line">    <span class="keyword">return</span> name_list</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-使用Counter实现计数统计"><a href="#4-使用Counter实现计数统计" class="headerlink" title="4.使用Counter实现计数统计"></a>4.使用Counter实现计数统计</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">name_count</span>(<span class="params">names</span>):</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">dict</span>(Counter(names))</span><br></pre></td></tr></table></figure>
+
+<p>可见，使用<code>Counter</code>类的第4种方法代码最简洁。<br>有了以上4种方法，平时面对小规模数据集的计数统计问题时就能够手到擒来了。</p>
+<p>更多统计实现方式等待发现！</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Python/" rel="tag"># Python</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/02/24/python-star-operator/" rel="prev" title="Python的*和**运算符是什么意思？有什么区别？">
+                  <i class="fa fa-angle-left"></i> Python的*和**运算符是什么意思？有什么区别？
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/02/26/python-use-defaultdict-to-reduce-code/" rel="next" title="使用defaultdict精简Python代码">
+                  使用defaultdict精简Python代码 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">ocre</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

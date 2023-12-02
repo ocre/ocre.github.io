@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="这是ocre的个人技术博客，主要记录日常接触的一些技术知识，涵盖后端开发、服务器运维、数据分析等IT领域。也会记录一些所遇问题的解决办法，以备自己和有需要的人按需查找。记录风格偏流水账一些，知识点较分散，尚未成体系，是为：憨憨呆呆的IT之旅。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="憨憨呆呆的IT之旅">
+<meta property="og:url" content="http://example.com/page/7/index.html">
+<meta property="og:site_name" content="憨憨呆呆的IT之旅">
+<meta property="og:description" content="这是ocre的个人技术博客，主要记录日常接触的一些技术知识，涵盖后端开发、服务器运维、数据分析等IT领域。也会记录一些所遇问题的解决办法，以备自己和有需要的人按需查找。记录风格偏流水账一些，知识点较分散，尚未成体系，是为：憨憨呆呆的IT之旅。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="ocre">
+<meta property="article:tag" content="憨憨呆呆的IT之旅,技术博客,blog,coding,ocre,个人博客">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/page/7/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"page/7/index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>憨憨呆呆的IT之旅</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="憨憨呆呆的IT之旅" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">憨憨呆呆的IT之旅</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">我见，我思，我行</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ocre</p>
+  <div class="site-description" itemprop="description">这是ocre的个人技术博客，主要记录日常接触的一些技术知识，涵盖后端开发、服务器运维、数据分析等IT领域。也会记录一些所遇问题的解决办法，以备自己和有需要的人按需查找。记录风格偏流水账一些，知识点较分散，尚未成体系，是为：憨憨呆呆的IT之旅。</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">75</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/02/20/show-flowchart-and-sequence-in-hexo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ocre">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="憨憨呆呆的IT之旅">
+      <meta itemprop="description" content="这是ocre的个人技术博客，主要记录日常接触的一些技术知识，涵盖后端开发、服务器运维、数据分析等IT领域。也会记录一些所遇问题的解决办法，以备自己和有需要的人按需查找。记录风格偏流水账一些，知识点较分散，尚未成体系，是为：憨憨呆呆的IT之旅。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 憨憨呆呆的IT之旅">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/02/20/show-flowchart-and-sequence-in-hexo/" class="post-title-link" itemprop="url">修复Hexo中时序图插件hexo-filter-sequence不显示的问题</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-02-20 13:49:51" itemprop="dateCreated datePublished" datetime="2020-02-20T13:49:51+08:00">2020-02-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2020-03-30 16:30:12" itemprop="dateModified" datetime="2020-03-30T16:30:12+08:00">2020-03-30</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>写Blog时，想展示时序图和流程图，网友给推荐了流程图插件<a target="_blank" rel="noopener" href="https://github.com/bubkoo/hexo-filter-flowchart">hexo-filter-flowchart</a>和时序图插件<a target="_blank" rel="noopener" href="https://github.com/bubkoo/hexo-filter-sequence">hexo-filter-sequence</a>。装上两个插件之后，根据github上的示例测试了一下，发现在Hexo中时序图无法显示。</p>
+<h2 id="问题处理"><a href="#问题处理" class="headerlink" title="问题处理"></a>问题处理</h2><p>根据<a target="_blank" rel="noopener" href="https://www.dazhuanlan.com/2019/12/24/5e0209fc19074/">这篇博文</a>的指示，顺利解决了这个问题。修改过程记录如下：</p>
+<ol>
+<li>修改<code>node_modules\hexo-filter-sequence\index.js</code>文件，<code>flowchart</code>改为<code>sequence</code>，另外去掉<code>snap.svg.js</code>添加<code>rahpael.js</code>，具体改动部分如下：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">hexo.config.sequence = assign(&#123;</span><br><span class="line">  webfont: &#x27;https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.27/webfontloader.js&#x27;,</span><br><span class="line">  // snap: &#x27;https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js&#x27;,</span><br><span class="line">  raphael:    &#x27;https://cdn.bootcss.com/raphael/2.3.0/raphael.min.js&#x27;,</span><br><span class="line">  underscore: &#x27;https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js&#x27;,</span><br><span class="line">  sequence: &#x27;https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js&#x27;,</span><br><span class="line">  css: &#x27;&#x27;,</span><br><span class="line">  options: &#123;</span><br><span class="line">    theme: &#x27;simple&#x27;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;, hexo.config.sequence);</span><br></pre></td></tr></table></figure></li>
+<li>修改<code>node_modules\hexo-filter-sequence\lib\renderer.js</code>文件第25行左右，<code>flowchart</code>改为<code>sequence</code>，<code>config.snap</code>改为<code>config.rahpael</code>，改动后的内容如下：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">if (sequences.length) &#123;</span><br><span class="line">      var config = this.config.sequence;</span><br><span class="line">      // resources</span><br><span class="line">      data.content += &#x27;&lt;script src=&quot;&#x27; + config.webfont + &#x27;&quot;&gt;&lt;/script&gt;&#x27;;</span><br><span class="line">      // data.content += &#x27;&lt;script src=&quot;&#x27; + config.snap + &#x27;&quot;&gt;&lt;/script&gt;&#x27;;</span><br><span class="line">      data.content += &#x27;&lt;script src=&quot;&#x27; + config.raphael + &#x27;&quot;&gt;&lt;/script&gt;&#x27;;</span><br><span class="line">      data.content += &#x27;&lt;script src=&quot;&#x27; + config.underscore + &#x27;&quot;&gt;&lt;/script&gt;&#x27;;</span><br><span class="line">      data.content += &#x27;&lt;script src=&quot;&#x27; + config.sequence + &#x27;&quot;&gt;&lt;/script&gt;&#x27;;</span><br></pre></td></tr></table></figure></li>
+<li>hexo的<code>_config.yml</code>配置文件中启用国内CDN（默认的cdnjs.cloudflare.com国内可能无法访问），修改如下：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># sequence config</span><br><span class="line">sequence:</span><br><span class="line">  webfont:    &#x27;https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js&#x27;</span><br><span class="line">  raphael:    &#x27;https://cdn.bootcss.com/raphael/2.3.0/raphael.min.js&#x27;</span><br><span class="line">  # snap:       &#x27;https://cdn.bootcss.com/snap.svg/0.5.1/snap.svg-min.js&#x27;</span><br><span class="line">  underscore: &#x27;https://cdn.bootcss.com/underscore.js/1.9.1/underscore-min.js&#x27;</span><br><span class="line">  sequence:   &#x27;https://cdn.bootcss.com/js-sequence-diagrams/1.0.6/sequence-diagram-min.js&#x27;</span><br><span class="line">  css: # optional, the url for css, such as hand drawn theme </span><br><span class="line">  options: </span><br><span class="line">    theme: </span><br><span class="line">    css_class: </span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># flowchart config</span><br><span class="line">flowchart:</span><br><span class="line">  raphael:   &#x27;https://cdn.bootcss.com/raphael/2.3.0/raphael.min.js&#x27;</span><br><span class="line">  flowchart: &#x27;https://cdn.bootcss.com/flowchart/1.12.2/flowchart.min.js&#x27;</span><br><span class="line">  options: # options used for `drawSVG`</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>修改完成后，依次执行<code>hexo clean</code>,<code>hexo g</code>,<code>hexo d</code>重新部署，问题解决。</p>
+<p>附测试代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Client-&gt;Server: request</span><br><span class="line">Note right of Server: WSGI</span><br><span class="line">Server-&gt;Application: app_callable(environ, start_response)</span><br><span class="line">Application-&gt;Server: start_response(status, response_headers, exc_info=None)</span><br><span class="line">Application-&gt;Server: return iterator</span><br><span class="line">Server-&gt;Client: response</span><br></pre></td></tr></table></figure>
+
+<p>展示效果如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Client-&gt;Server: request</span><br><span class="line">Note right of Server: WSGI</span><br><span class="line">Server-&gt;Application: app_callable(environ, start_response)</span><br><span class="line">Application-&gt;Server: start_response(status, response_headers, exc_info=None)</span><br><span class="line">Application-&gt;Server: return iterator</span><br><span class="line">Server-&gt;Client: response</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/02/20/what-is-wsgi/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ocre">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="憨憨呆呆的IT之旅">
+      <meta itemprop="description" content="这是ocre的个人技术博客，主要记录日常接触的一些技术知识，涵盖后端开发、服务器运维、数据分析等IT领域。也会记录一些所遇问题的解决办法，以备自己和有需要的人按需查找。记录风格偏流水账一些，知识点较分散，尚未成体系，是为：憨憨呆呆的IT之旅。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 憨憨呆呆的IT之旅">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/02/20/what-is-wsgi/" class="post-title-link" itemprop="url">Python的WSGI是什么？</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-02-20 08:26:10" itemprop="dateCreated datePublished" datetime="2020-02-20T08:26:10+08:00">2020-02-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2020-03-30 16:30:12" itemprop="dateModified" datetime="2020-03-30T16:30:12+08:00">2020-03-30</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="什么是WSGI？"><a href="#什么是WSGI？" class="headerlink" title="什么是WSGI？"></a>什么是WSGI？</h2><p>WSGI的全称是Web Server Gateway Interface，即Web服务器网管接口。注意，它不是一个服务器、不是Python模块、不是框架、也不是API程序，它不是任何一种软件，而仅仅是Python语言针对Web服务器和Web应用程序之间通用接口的规范（<a target="_blank" rel="noopener" href="https://www.python.org/dev/peps/pep-3333">PEP 3333</a>）。符合WSGI规范的应用程序可以运行在任何符合该规范的Web服务器上。</p>
+<h2 id="WSGI规范"><a href="#WSGI规范" class="headerlink" title="WSGI规范"></a>WSGI规范</h2><p>WSGI规范十分简单。下面这张时序图展示了WSGI所处的位置，以及调用规则。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Client-&gt;Server: request</span><br><span class="line">Note right of Server: WSGI</span><br><span class="line">Server-&gt;Application: app_callable(environ, start_response)</span><br><span class="line">Application-&gt;Server: start_response(status, response_headers, exc_info=None)</span><br><span class="line">Application-&gt;Server: return iterator</span><br><span class="line">Server-&gt;Client: response</span><br></pre></td></tr></table></figure>
+
+<p>从上图可见，WSGI处于<code>Server</code>和<code>Application</code>之间。<code>Server</code>端负责实现<code>start_response</code>这个<code>callback</code>，<code>Application</code>端负责实现<code>app_callable</code>这个<code>callable</code>对象。<br>其中，<code>app_callable</code>接受两个参数：</p>
+<ul>
+<li><code>environ</code>: 包含有<code>Server</code>提供的所有请求信息的一个<code>dict</code>对象。</li>
+<li><code>start_response</code>: <code>Server</code>端提供的回调方法，<code>Application</code>端可以通过它发送HTTP状态码和HTTP头部信息。<br><code>app_callable</code>最后返回一个封装成可迭代对象的响应体字符串。</li>
+</ul>
+<p>以下是一个简单的<code>app_callable</code>实现：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">app_callable</span>(<span class="params">environ, start_response</span>):</span><br><span class="line">    response_body = <span class="string">&#x27;Request method: %s&#x27;</span> % environ[<span class="string">&#x27;REQUEST_METHOD&#x27;</span>]</span><br><span class="line">    status = <span class="string">&#x27;200 OK&#x27;</span></span><br><span class="line">    response_headers = [(<span class="string">&#x27;Content-type&#x27;</span>, <span class="string">&#x27;text/plain&#x27;</span>)]</span><br><span class="line">    </span><br><span class="line">    start_response(status, response_headers)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> [response_body]</span><br></pre></td></tr></table></figure>
+
+<p><code>WSGI</code>的<code>Application</code>端可以支持堆栈式调用。调用栈中间的<code>Application</code>又被称为<code>Middleware</code>。<code>Middleware</code>同时扮演<code>Server</code>和<code>Application</code>两种角色，因此需要同时实现<code>WSGI</code>两端的接口。<br>下图是对<code>Middleware</code>所处位置的一个简单表示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Note right of Server: WSGI</span><br><span class="line">Server-&gt;Application1: </span><br><span class="line">Note right of Application1: WSGi</span><br><span class="line">Middleware1-&gt;Application1: </span><br><span class="line">Note right of Middleware1: WSGI</span><br><span class="line">Application1-&gt;Middleware2: </span><br><span class="line">Note right of Middleware2: WSGI</span><br><span class="line">Middleware2-&gt;Middleware3: </span><br><span class="line">Note right of Middleware3: WSGI</span><br><span class="line">Middleware3-&gt;Application2: </span><br><span class="line">Application2-&gt;Middleware3: </span><br><span class="line">Middleware3-&gt;Middleware2: </span><br><span class="line">Middleware2-&gt;Middleware1: </span><br><span class="line">Middleware1-&gt;Application1: </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="WSGI实现示例"><a href="#WSGI实现示例" class="headerlink" title="WSGI实现示例"></a>WSGI实现示例</h2><p>在生产环境，一般用<code>Apache</code>+<code>mod_wsgi</code>来作为<code>Server</code>端的标准实现。这里我们使用Python内置的WSGI服务器<code>wsgiref</code>来实现一个简单示例。<br>编写一个<code>wsgi_test.py</code>文件，内容如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;test wsgi</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># wsgi_test.py</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> wsgiref.simple_server <span class="keyword">import</span> make_server</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">application</span> (environ, start_response):</span><br><span class="line">    status = <span class="string">&#x27;200 OK&#x27;</span></span><br><span class="line">    response_headers = [(<span class="string">&#x27;Content-Type&#x27;</span>, <span class="string">&#x27;text/plain&#x27;</span>)]</span><br><span class="line">    start_response(status, response_headers)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> [<span class="string">f&#x27;Request <span class="subst">&#123;environ[<span class="string">&quot;REQUEST_METHOD&quot;</span>]&#125;</span>&#x27;</span></span><br><span class="line">            <span class="string">f&#x27; <span class="subst">&#123;environ[<span class="string">&quot;PATH_INFO&quot;</span>]&#125;</span> has been&#x27;</span></span><br><span class="line">            <span class="string">f&#x27; processed\r\n&#x27;</span>.encode(<span class="string">&#x27;utf-8&#x27;</span>)]</span><br><span class="line"></span><br><span class="line">server = make_server(<span class="string">&#x27;localhost&#x27;</span>, <span class="number">8000</span>, application)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Wait for a single request, serve it and quit</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Serving HTTP on port 8000...&#x27;</span>)</span><br><span class="line">server.serve_forever()</span><br></pre></td></tr></table></figure>
+<p>接着在命令行运行<code>python wsgi_test.py</code>，启动WSGI服务器。然后打开浏览器，输入<code>http://localhost:8000/</code> 就可以看到效果了。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/02/18/json-lines/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ocre">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="憨憨呆呆的IT之旅">
+      <meta itemprop="description" content="这是ocre的个人技术博客，主要记录日常接触的一些技术知识，涵盖后端开发、服务器运维、数据分析等IT领域。也会记录一些所遇问题的解决办法，以备自己和有需要的人按需查找。记录风格偏流水账一些，知识点较分散，尚未成体系，是为：憨憨呆呆的IT之旅。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 憨憨呆呆的IT之旅">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/02/18/json-lines/" class="post-title-link" itemprop="url">Scrapy中的JSON Lines文本格式是什么鬼？</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-02-18 21:38:10" itemprop="dateCreated datePublished" datetime="2020-02-18T21:38:10+08:00">2020-02-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2020-03-30 16:30:12" itemprop="dateModified" datetime="2020-03-30T16:30:12+08:00">2020-03-30</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="什么是JSON-Lines"><a href="#什么是JSON-Lines" class="headerlink" title="什么是JSON Lines"></a>什么是JSON Lines</h1><p><a target="_blank" rel="noopener" href="http://jsonlines.org/">JSON Lines</a>是一种类似JSON的文本格式。它采用<code>\\n</code>作为分隔符存储多个JSON对象的列表，每个JSON对象仍然使用JSON格式表示。它有三个硬性约束：<br>1.使用UTF-8编码。<br>2.每一行都是一个有效的JSON对象。<br>3.行分隔符为<code>\\n</code>。</p>
+<p>JSON Line文件的建议扩展名是<code>.jsonl</code>。一般建议使用gzip或者bzip2进行压缩，生成<code>.jsonl.gz</code>或<code>.jsonl.bz2</code>文件，进一步节省存储空间。</p>
+<h1 id="为什么使用JSON-Lines"><a href="#为什么使用JSON-Lines" class="headerlink" title="为什么使用JSON Lines"></a>为什么使用JSON Lines</h1><p>我们平时习惯用<code>CSV</code>和<code>JSON</code>文本格式来存储列表类对象。同样的数据，<code>CSV</code>相比<code>JSON</code>更简洁，更节省空间，但是可读性很差（数据列分隔符随便定义没有统一标准，数据列定义只在第一行体现，不够直观），并且不支持嵌套数据。而<code>JSON</code>格式的可读性更好，能够支持嵌套数据，但是在存储数据列表时，需要识别数组首尾的<code>[</code>和<code>]</code>，涉及到读取、解析、存储整个文件，不适合大文件的高效存取。因此，<code>JSON Lines</code>应运而生。采用 JSON Lines 保存数据集，则文件中每一行就是一条<code>JSON</code>数据，可以一边读取一边解析、操作。而在添加数据时，只需要 append 数据到文件尾部即可。</p>
+<h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1><p>一个简单的<code>JSON Lines</code>格式文件内容如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;name&quot;: &quot;Gilbert&quot;, &quot;wins&quot;: [[&quot;straight&quot;, &quot;7♣&quot;], [&quot;one pair&quot;, &quot;10♥&quot;]]&#125;</span><br><span class="line">&#123;&quot;name&quot;: &quot;Alexa&quot;, &quot;wins&quot;: [[&quot;two pair&quot;, &quot;4♠&quot;], [&quot;two pair&quot;, &quot;9♠&quot;]]&#125;</span><br><span class="line">&#123;&quot;name&quot;: &quot;May&quot;, &quot;wins&quot;: []&#125;</span><br><span class="line">&#123;&quot;name&quot;: &quot;Deloise&quot;, &quot;wins&quot;: [[&quot;three of a kind&quot;, &quot;5♣&quot;]]&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h1><p><code>JSON Lines</code>文本格式由于同时具备可读性和便于流式处理的特点，常常被用于以下场景：<br>1.日志记录<br>2.流数据API<br>3.爬虫数据存储</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/02/18/conda-basic-usage/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ocre">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="憨憨呆呆的IT之旅">
+      <meta itemprop="description" content="这是ocre的个人技术博客，主要记录日常接触的一些技术知识，涵盖后端开发、服务器运维、数据分析等IT领域。也会记录一些所遇问题的解决办法，以备自己和有需要的人按需查找。记录风格偏流水账一些，知识点较分散，尚未成体系，是为：憨憨呆呆的IT之旅。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 憨憨呆呆的IT之旅">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/02/18/conda-basic-usage/" class="post-title-link" itemprop="url">Conda简介及基本用法</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-02-18 13:59:10" itemprop="dateCreated datePublished" datetime="2020-02-18T13:59:10+08:00">2020-02-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-11-20 10:27:39" itemprop="dateModified" datetime="2023-11-20T10:27:39+08:00">2023-11-20</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="什么是Conda？"><a href="#什么是Conda？" class="headerlink" title="什么是Conda？"></a>什么是Conda？</h2><p>Conda是一种通用包管理系统，旨在构建和管理任何语言和任何类型的软件。Conda主要提供包管理和环境管理两种能力。包管理与pip的使用类似，环境管理则允许用户同时安装多个版本的python，并支持快速切换。</p>
+<h2 id="Conda常用命令"><a href="#Conda常用命令" class="headerlink" title="Conda常用命令"></a>Conda常用命令</h2><h3 id="Conda包管理"><a href="#Conda包管理" class="headerlink" title="Conda包管理"></a>Conda包管理</h3><p>1.查看已安装的所有包: conda list<br>2.查看已安装的特定包：conda list scrapy<br>3.搜索云上的包: conda search scrapy<br>4.安装包: conda install scrapy<br>5.一次安装多个包: conda install numpy pandas scipy<br>6.安装固定版本的包: conda install numpy&#x3D;1.10<br>7.从指定频道安装包: conda install scrapy -c conda-forge<br>8.升级一个包: conda update scrapy<br>9.升级全部包: conda upgrade –all</p>
+<h3 id="Conda环境管理"><a href="#Conda环境管理" class="headerlink" title="Conda环境管理"></a>Conda环境管理</h3><p>1.查看所有虚拟环境： conda env list<br>2.激活特定环境：activate env_name<br>3.退出环境：deactivate env_name<br>4.创建虚拟环境：conda create -n env_name <list of package names><br>5.创建虚拟环境并指定特定Python版本：conda create -n env_name python2&#x3D;2.7<br>6.删除虚拟环境：conda env remove -n env_name</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/02/18/scrapy-startup/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ocre">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="憨憨呆呆的IT之旅">
+      <meta itemprop="description" content="这是ocre的个人技术博客，主要记录日常接触的一些技术知识，涵盖后端开发、服务器运维、数据分析等IT领域。也会记录一些所遇问题的解决办法，以备自己和有需要的人按需查找。记录风格偏流水账一些，知识点较分散，尚未成体系，是为：憨憨呆呆的IT之旅。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 憨憨呆呆的IT之旅">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/02/18/scrapy-startup/" class="post-title-link" itemprop="url">Scrapy开发环境搭建</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-02-18 11:49:51" itemprop="dateCreated datePublished" datetime="2020-02-18T11:49:51+08:00">2020-02-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2020-03-30 16:30:12" itemprop="dateModified" datetime="2020-03-30T16:30:12+08:00">2020-03-30</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="准备Python3运行环境"><a href="#准备Python3运行环境" class="headerlink" title="准备Python3运行环境"></a>准备Python3运行环境</h2><p>Scrapy基于Python语言编写，因此运行Scrapy需要先安装Python运行环境。所谓Python运行环境指可以编译执行Python代码的软件集合。已经安装了运行环境的请直接跳过。<br>目前常见的Python运行环境有三种方式：<br>1.直接安装<a target="_blank" rel="noopener" href="https://www.python.org/">Python3</a><br>2.安装<a target="_blank" rel="noopener" href="https://www.anaconda.com/">Anaconda</a><br>3.安装<a target="_blank" rel="noopener" href="https://conda.io/miniconda.html">Miniconda</a></p>
+<p>我选择安装Anaconda，因为相对于直接安装Python3，Anaconda提供了更简便强大的包管理和环境管理功能。<br>Anaconda是Python的一个科学计算发行版，支持 Linux, Mac和Windows系统，可以很方便地解决多版本python并存、切换以及各种第三方包安装问题。Anaconda内置了数百个Python标准库，装上Anaconda，就相当于把Python和一些如Numpy、Pandas、Scrip、Matplotlib等常用的库自动安装好了，使得安装比常规python安装要容易。因而建议直接安装Anaconda。直接从<a href="(https://www.anaconda.com/">官网</a>下载最新版Anaconda社区版安装包安装即可。</p>
+<p>当然，喜欢掌控一切的同学可以选择安装Miniconda。Miniconda可以看做是Anaconda的一个精简版。如果拿房子来比喻，Anaconda是精装房，Miniconda是毛坯房。Miniconda去掉了Anaconda内置的大量常用工具包，只提供一个较为纯净的Python运行环境和Conda（Conda是一种通用包管理系统，旨在构建和管理任何语言和任何类型的软件。<a href="./conda-basic-usage.html">Conda简介及基本用法</a>）。需要什么包就自己装什么包。</p>
+<p>装好Anaconda后，就可以继续安装Scrapy了。</p>
+<h2 id="安装Scrapy"><a href="#安装Scrapy" class="headerlink" title="安装Scrapy"></a>安装Scrapy</h2><p>按惯例，参照<a target="_blank" rel="noopener" href="https://scrapy.org/">Scrapy官网</a>的建议进行安装。官网提供了conda和pip两种安装方式，一条命令即可搞定。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">选择conda方式安装</span></span><br><span class="line">conda install scrapy -c conda-forge</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">选择pip方式安装</span></span><br><span class="line">pip install scrapy</span><br></pre></td></tr></table></figure>
+<p>安装好Scrapy后，就可以创建Scrapy项目了。</p>
+<h2 id="创建Scrapy项目"><a href="#创建Scrapy项目" class="headerlink" title="创建Scrapy项目"></a>创建Scrapy项目</h2><p>首先进入将要存放Scrapy工程代码的目录，执行如下命令即可创建一个名为<code>tutorial</code>的工程。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy startproject tutorial</span><br></pre></td></tr></table></figure>
+<p>我在执行上面命令的时候系统报错了，提示<code>Fatal error in launcher: Unable to create process using &#39;&quot;d:\bld\scrapy_1572360424769\_h_env\python.exe&quot;</code>。改为执行以下命令即可：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m scrapy startproject tutorial</span><br></pre></td></tr></table></figure>
+<p>执行成功后，将在当前目录下创建一个新的<code>tutorial</code>目录，目录结构如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">tutorial/</span><br><span class="line">    scrapy.cfg            # Scrapy的部署配置文件</span><br><span class="line">    tutorial/             # Scrapy项目的Python模块</span><br><span class="line">        __init__.py</span><br><span class="line">        items.py          # items definition file</span><br><span class="line">        middlewares.py    # project middlewares file</span><br><span class="line">        pipelines.py      # project pipelines file</span><br><span class="line">        settings.py       # project settings file</span><br><span class="line">        spiders/          # spider子模块</span><br><span class="line">            __init__.py</span><br></pre></td></tr></table></figure>
+<p>接下来就可以编写自己的spider类了。请参考Scrapy官方的<a target="_blank" rel="noopener" href="https://docs.scrapy.org/en/latest/intro/tutorial.html#our-first-spider">Tutorial</a>。</p>
+<h2 id="Scrapy常见命令"><a href="#Scrapy常见命令" class="headerlink" title="Scrapy常见命令"></a>Scrapy常见命令</h2><ul>
+<li>创建spider（基于basic模板）：<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m scrapy genspider quotes &quot;quotes.toscrape.com&quot;</span><br></pre></td></tr></table></figure></li>
+<li>运行spider：<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m scrapy crawl quotes</span><br></pre></td></tr></table></figure>
+或者<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m scrapy runspider quotes.py</span><br></pre></td></tr></table></figure></li>
+<li>测试提取数据：<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m scrapy shell &#x27;http://quotes.toscrape.com/page/1/&#x27;</span><br></pre></td></tr></table></figure></li>
+<li>导出数据到<code>JSON</code>文档：<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m scrapy crawl quotes -o quotes.json</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/01/19/mysql-data-recovery-from-physical-db-files/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ocre">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="憨憨呆呆的IT之旅">
+      <meta itemprop="description" content="这是ocre的个人技术博客，主要记录日常接触的一些技术知识，涵盖后端开发、服务器运维、数据分析等IT领域。也会记录一些所遇问题的解决办法，以备自己和有需要的人按需查找。记录风格偏流水账一些，知识点较分散，尚未成体系，是为：憨憨呆呆的IT之旅。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 憨憨呆呆的IT之旅">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/01/19/mysql-data-recovery-from-physical-db-files/" class="post-title-link" itemprop="url">阿里云RDS Mysql物理备份文件恢复到自建数据库</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-01-19 20:30:01" itemprop="dateCreated datePublished" datetime="2020-01-19T20:30:01+08:00">2020-01-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-11-20 10:27:39" itemprop="dateModified" datetime="2023-11-20T10:27:39+08:00">2023-11-20</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>今天需要将Mysql数据从RDS迁移到ECS云服务器上自建Mysql中。因我的RDS已到期停机，无法通过mysqldump等命令导出数据，好在RDS给提供了数据库物理文件的每日全量备份，姑且用之。<br>整个操作流程可分为三个：下载解压物理文件备份， 使用Percona XtraBackup恢复数据，启动MySQL并校验数据。</p>
+<h2 id="下载解压备份文件"><a href="#下载解压备份文件" class="headerlink" title="下载解压备份文件"></a>下载解压备份文件</h2><p>在RDS的备份恢复界面找到最新备份:</p>
+<p><img src="https://raw.githubusercontent.com/ocre/blog-pub-images/master/typora/20200119225737-71726.png" alt="1579445856935"></p>
+<p>获取下载地址并使用wget或curl下载到ECS机器上。下载得到的是一个tar.gz压缩包，使用如下命令解压缩：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar -izxvf &#x27;&lt;backup_file_name.tar.gz&gt;&#x27; -C &#x27;&lt;MySQL data dir&gt;&#x27;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="keyword">for</span> example，my <span class="built_in">command</span> is:</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">tar -izxvf /mnt/backup_data/db_backup/rds_data_20200118.tar.gz -C /var/lib/mysql</span></span><br></pre></td></tr></table></figure>
+<p>这里我直接解压到了默认的MySQL数据目录&#x2F;var&#x2F;lib&#x2F;mysql.（我的MySQL是新装的，还没启动，因此默认数据目录下是空的）。</p>
+<h2 id="使用Percona-XtraBackup恢复数据"><a href="#使用Percona-XtraBackup恢复数据" class="headerlink" title="使用Percona XtraBackup恢复数据"></a>使用Percona XtraBackup恢复数据</h2><p>首先，需要安装Percona XtraBackup。这里需要注意，不同的MySQL版本，需要不同的Percona XtraBackup版本。比如，MySQL 5.6及之前的版本需要<a target="_blank" rel="noopener" href="https://www.percona.com/doc/percona-xtrabackup/2.3/installation/yum_repo.html#installing-percona-xtrabackup-using-downloaded-rpm-packages">安装 Percona XtraBackup 2.3</a>，MySQL 5.7版本需要<a target="_blank" rel="noopener" href="https://www.percona.com/doc/percona-xtrabackup/2.4/installation.html">安装 Percona XtraBackup 2.4</a>，MySQL 8.0版本需要<a target="_blank" rel="noopener" href="https://www.percona.com/doc/percona-xtrabackup/8.0/installation.html">安装 Percona XtraBackup 8.0</a>。<br>安装完毕后，执行如下命令，恢复解压后的文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">innobackupex --defaults-file=/var/lib/mysql/backup-my.cnf --apply-log /var/lib/mysql</span><br></pre></td></tr></table></figure>
+<p>若恢复成功，则会提示类似文字：</p>
+<p><img src="https://raw.githubusercontent.com/ocre/blog-pub-images/master/typora/20200119232144-778390.jpeg" alt="恢复成功提示"></p>
+<h2 id="启动MySQL并校验数据"><a href="#启动MySQL并校验数据" class="headerlink" title="启动MySQL并校验数据"></a>启动MySQL并校验数据</h2><p>设置正确的文件属主：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chown -R mysql:mysql /var/lib/mysql</span><br></pre></td></tr></table></figure>
+<p>执行如下命令启动mysql：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service mysql restart</span><br></pre></td></tr></table></figure>
+<p>使用各种客户端软件连接MySQL，根据业务情况校验各数据库、各表的数据。</p>
+<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://help.aliyun.com/knowledge_detail/41817.html">RDS MySQL 物理备份文件恢复到自建数据库 - 阿里云</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/01/19/how-to-yum-install-old-version-mysql/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ocre">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="憨憨呆呆的IT之旅">
+      <meta itemprop="description" content="这是ocre的个人技术博客，主要记录日常接触的一些技术知识，涵盖后端开发、服务器运维、数据分析等IT领域。也会记录一些所遇问题的解决办法，以备自己和有需要的人按需查找。记录风格偏流水账一些，知识点较分散，尚未成体系，是为：憨憨呆呆的IT之旅。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 憨憨呆呆的IT之旅">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/01/19/how-to-yum-install-old-version-mysql/" class="post-title-link" itemprop="url">CentOS 7 Yum安装低版本的MySQL（MySQL 5.6）</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-01-19 18:10:15" itemprop="dateCreated datePublished" datetime="2020-01-19T18:10:15+08:00">2020-01-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2020-03-30 16:30:12" itemprop="dateModified" datetime="2020-03-30T16:30:12+08:00">2020-03-30</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>我有一台阿里云RDS数据库到期了，考虑到目前业务规模，续费的性价比太低，不如在自己的ECS云服务器上装MySQL再把数据迁移过来。为了避免数据文件迁移时产生兼容性问题，要尽量保证自建MySQL跟RDS上的MySQL的主版本保持一致。<br>我的RDS上MySQL是5.6版本，而Mysql Yum仓库默认已经升级到8.0版本了，在Yum安装前需要做一些额外设置。</p>
+<h2 id="添加MySQL-Yum源"><a href="#添加MySQL-Yum源" class="headerlink" title="添加MySQL Yum源"></a>添加MySQL Yum源</h2><p>首先，从 <a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/repo/yum/">MySQL官方Yum仓库</a>选择适合当前CentOS版本的rpm包。</p>
+<p><img src="https://raw.githubusercontent.com/ocre/blog-pub-images/master/typora/20200119215509-263995.png" alt="1579442107075"></p>
+<p>下载到ECS云服务器上。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -i -c https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm</span><br></pre></td></tr></table></figure>
+<p>添加Yum仓库。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rpm -Uvh mysql80-community-release-el7-3.noarch.rpm</span><br></pre></td></tr></table></figure>
+
+<h2 id="设置默认安装版本"><a href="#设置默认安装版本" class="headerlink" title="设置默认安装版本"></a>设置默认安装版本</h2><p>查询可安装的MySQL版本：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum repolist all | grep mysql</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/ocre/blog-pub-images/master/typora/20200119220746-868577.png" alt="1579442778319"></p>
+<p>图中enabled状态的版本为Yum安装时的默认版本。如果默认版本不是5.6，需手工编辑<code>/etc/yum.repos.d/mysql-community.repo</code>文件来调整所需版本的启用状态，比如，要想安装5.6版本，则需要将以下代表5.6版本的代码段的enabled设置为1，同时将其他代码片段的enabled值置0。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Enable to use MySQL 5.6</span></span><br><span class="line">[mysql56-community]</span><br><span class="line">name=MySQL 5.6 Community Server</span><br><span class="line">baseurl=http://repo.mysql.com/yum/mysql-5.6-community/el/7/$basearch/</span><br><span class="line">enabled=1</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-mysql</span><br></pre></td></tr></table></figure>
+
+<p>调整完毕后，可重新执行<code>yum repolist all | grep mysql</code>命令复查一下，看默认版本是否符合预期。</p>
+<h2 id="执行安装"><a href="#执行安装" class="headerlink" title="执行安装"></a>执行安装</h2><p>MySQL默认版本设置检查无误后，执行以下命令即可安装MySQL：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install mysql-community-server</span><br></pre></td></tr></table></figure>
+<p>检查MySQL版本号：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -V</span><br></pre></td></tr></table></figure>
+<p>我这里输出为：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql  Ver 14.14 Distrib 5.6.47, for Linux (x86_64) using  EditLine wrapper</span><br></pre></td></tr></table></figure>
+<p>版本号为5.6.XX，符合预期，安装成功！</p>
+<h2 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h2><p><a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/mysql-yum-repo-quick-guide/en/">A Quick Guide to Using the MySQL Yum Repository</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/01/12/docker-basic-concepts/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ocre">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="憨憨呆呆的IT之旅">
+      <meta itemprop="description" content="这是ocre的个人技术博客，主要记录日常接触的一些技术知识，涵盖后端开发、服务器运维、数据分析等IT领域。也会记录一些所遇问题的解决办法，以备自己和有需要的人按需查找。记录风格偏流水账一些，知识点较分散，尚未成体系，是为：憨憨呆呆的IT之旅。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 憨憨呆呆的IT之旅">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/01/12/docker-basic-concepts/" class="post-title-link" itemprop="url">Docker简介</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-01-12 13:59:10" itemprop="dateCreated datePublished" datetime="2020-01-12T13:59:10+08:00">2020-01-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2020-03-30 16:30:12" itemprop="dateModified" datetime="2020-03-30T16:30:12+08:00">2020-03-30</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="Docker-基本概念"><a href="#Docker-基本概念" class="headerlink" title="Docker 基本概念"></a>Docker 基本概念</h2><p>理解Docker, 必须先搞懂以下三个基本概念:</p>
+<ul>
+<li><em><strong>镜像(Image)</strong></em>: 相当于一套root文件系统。</li>
+<li><em><strong>容器(Container)</strong></em>: 容器是镜像运行的实体，实际上就是一个普通进程。</li>
+<li><em><strong>仓库(Repository)</strong></em>: 存储Docker镜像的中心仓库。比如Docker Hub就是公共的镜像仓库。</li>
+</ul>
+<p>容器和镜像的关系类似于面向对象语言的类和实例。</p>
+<h2 id="Docker-结构图"><a href="#Docker-结构图" class="headerlink" title="Docker 结构图"></a>Docker 结构图</h2><p>Docker采用C&#x2F;S模式管理远程Docker容器。<br>Docker容器可被创建、启动、停止、删除、暂停。<br>Docker容器通过Docker镜像来创建。</p>
+<p><img src="https://raw.githubusercontent.com/ocre/blog-pub-images/master/typora/20200112212304-731097.png" alt="Docker运行结构图"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/01/07/how-to-quote-my-old-post-in-hexo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ocre">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="憨憨呆呆的IT之旅">
+      <meta itemprop="description" content="这是ocre的个人技术博客，主要记录日常接触的一些技术知识，涵盖后端开发、服务器运维、数据分析等IT领域。也会记录一些所遇问题的解决办法，以备自己和有需要的人按需查找。记录风格偏流水账一些，知识点较分散，尚未成体系，是为：憨憨呆呆的IT之旅。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 憨憨呆呆的IT之旅">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/01/07/how-to-quote-my-old-post-in-hexo/" class="post-title-link" itemprop="url">Hexo引用自己的文章</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-01-07 13:23:29" itemprop="dateCreated datePublished" datetime="2020-01-07T13:23:29+08:00">2020-01-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2020-04-01 15:32:26" itemprop="dateModified" datetime="2020-04-01T15:32:26+08:00">2020-04-01</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>用Hexo写Blog文章时，经常需要引用自己的另一篇文章，如何做呢？<br>可以使用Hexo自带的<code>post_link</code>标签。用法如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% post_link url_slug show_title %&#125;</span><br></pre></td></tr></table></figure>
+<p>其中，<code>url_slug</code>表示Hexo项目<code>source/_posts</code>目录中markdown文件的名字。比如，我有一篇Blog <a href="/2019/12/08/hexo-with-netlify/" title="使用netlify自动发布hexo博客">使用netlify自动发布hexo博客</a>, 它对应的markdown文件是<em>hexo-with-netlify.md</em>, 则<code>url_slug</code>就是<em>hexo-with-netlify</em>。<br><code>show_title</code>表示你想要在这里显示给用户看的文章标题，可以不用跟原博客标题保持一致。<br>拿刚刚这篇文章来说，我在引用它时，需要输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% post_link hexo-with-netlify 使用netlify自动发布hexo博客 %&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/01/06/shiro-at-a-glance-01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ocre">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="憨憨呆呆的IT之旅">
+      <meta itemprop="description" content="这是ocre的个人技术博客，主要记录日常接触的一些技术知识，涵盖后端开发、服务器运维、数据分析等IT领域。也会记录一些所遇问题的解决办法，以备自己和有需要的人按需查找。记录风格偏流水账一些，知识点较分散，尚未成体系，是为：憨憨呆呆的IT之旅。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 憨憨呆呆的IT之旅">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/01/06/shiro-at-a-glance-01/" class="post-title-link" itemprop="url">Apache Shiro简介</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-01-06 18:51:03" itemprop="dateCreated datePublished" datetime="2020-01-06T18:51:03+08:00">2020-01-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2020-03-30 16:30:12" itemprop="dateModified" datetime="2020-03-30T16:30:12+08:00">2020-03-30</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="Shiro是什么？"><a href="#Shiro是什么？" class="headerlink" title="Shiro是什么？"></a>Shiro是什么？</h3><p>Shiro是Java领域一个开源安全框架，可以为应用程序提供全面的安全管理服务，功能包括但不限于身份认证、授权、Session管理、加密等。Shiro目前隶属于Apache Software Foundation，其主要竞争对手是Spring Security。相对于Spring Security, Shiro更加简单轻便，适合入门使用。</p>
+<h3 id="Shiro能做什么？"><a href="#Shiro能做什么？" class="headerlink" title="Shiro能做什么？"></a>Shiro能做什么？</h3><p>Shiro的核心功能可以用下图表示：</p>
+<p><img src="F:\Dan\work\MNBSB\素材\shiro\ShiroFeatures.png" alt="Shiro核心功能"></p>
+<p>从上图可知，Shiro提供以下四个核心功能：</p>
+<ol>
+<li><strong>身份认证</strong>: 用户身份认证，通常指<em>用户登陆</em></li>
+<li><strong>授权</strong>：即权限验证，处理访问控制</li>
+<li><strong>Session管理</strong>： </li>
+<li><strong>加密服务</strong><br>除了上述四个核心功能外，Shiro还针对不同应用环境提供额外的Feature来简化应用集成：</li>
+<li>Web支持</li>
+<li>Cache</li>
+<li>并发</li>
+<li>测试</li>
+<li><em>Run as</em></li>
+<li><em>Remeber me</em></li>
+</ol>
+<h3 id="Shiro适用于哪些领域？"><a href="#Shiro适用于哪些领域？" class="headerlink" title="Shiro适用于哪些领域？"></a>Shiro适用于哪些领域？</h3><p>Shiro即可应用于JavaSE环境，用于一般Java程序开发，也适用于JavaEE环境，用于大规模企业级Java应用开发。</p>
+<h3 id="Shiro是如何设计的？"><a href="#Shiro是如何设计的？" class="headerlink" title="Shiro是如何设计的？"></a>Shiro是如何设计的？</h3><p>读书时我习惯先读读作者自序，来了解作者写书时面临的问题以及想要传达给读者的意图。同样的，学习一个新的框架，也可以先花点时间看看框架的历史、设计目标和核心概念。</p>
+<p>（未完待续）</p>
+<h4 id="Shiro极简史"><a href="#Shiro极简史" class="headerlink" title="Shiro极简史"></a>Shiro极简史</h4><p>Shiro诞生（2020年）已经有17岁了。</p>
+<p>（未完待续）</p>
+<h4 id="Shiro的核心概念"><a href="#Shiro的核心概念" class="headerlink" title="Shiro的核心概念"></a>Shiro的核心概念</h4><p>（未完待续）</p>
+<h4 id="Shiro的技术架构"><a href="#Shiro的技术架构" class="headerlink" title="Shiro的技术架构"></a>Shiro的技术架构</h4><p>（未完待续）</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" title="上一页" aria-label="上一页" href="/page/6/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/8/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">ocre</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
