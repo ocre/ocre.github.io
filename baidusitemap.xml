@@ -45,11 +45,11 @@
     <lastmod>2023-11-20</lastmod>
   </url>
   <url>
-    <loc>http://example.com/2020/04/24/setup-vscode-with-php-xdebug-for-macos/</loc>
+    <loc>http://example.com/2020/04/04/setup-django-develop-environment/</loc>
     <lastmod>2023-11-20</lastmod>
   </url>
   <url>
-    <loc>http://example.com/2020/04/04/setup-django-develop-environment/</loc>
+    <loc>http://example.com/2020/04/24/setup-vscode-with-php-xdebug-for-macos/</loc>
     <lastmod>2023-11-20</lastmod>
   </url>
   <url>
@@ -81,11 +81,11 @@
     <lastmod>2023-11-20</lastmod>
   </url>
   <url>
-    <loc>http://example.com/2020/10/19/mask-input-field-value-with-star/</loc>
+    <loc>http://example.com/2020/03/30/maven-setup-for-win10/</loc>
     <lastmod>2023-11-20</lastmod>
   </url>
   <url>
-    <loc>http://example.com/2020/03/30/maven-setup-for-win10/</loc>
+    <loc>http://example.com/2020/10/19/mask-input-field-value-with-star/</loc>
     <lastmod>2023-11-20</lastmod>
   </url>
   <url>
@@ -97,19 +97,15 @@
     <lastmod>2023-11-20</lastmod>
   </url>
   <url>
-    <loc>http://example.com/2020/08/19/java-serialize-and-deserialize-multiple-objects/</loc>
-    <lastmod>2023-11-20</lastmod>
-  </url>
-  <url>
     <loc>http://example.com/2020/09/15/java-stream-interface-note/</loc>
     <lastmod>2023-11-20</lastmod>
   </url>
   <url>
-    <loc>http://example.com/2020/09/15/java-oop-7-principles/</loc>
+    <loc>http://example.com/2020/08/19/java-serialize-and-deserialize-multiple-objects/</loc>
     <lastmod>2023-11-20</lastmod>
   </url>
   <url>
-    <loc>http://example.com/2020/06/12/java-file-note-1/</loc>
+    <loc>http://example.com/2020/09/15/java-oop-7-principles/</loc>
     <lastmod>2023-11-20</lastmod>
   </url>
   <url>
@@ -118,6 +114,10 @@
   </url>
   <url>
     <loc>http://example.com/2020/06/12/java-io-note-1/</loc>
+    <lastmod>2023-11-20</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2020/06/12/java-file-note-1/</loc>
     <lastmod>2023-11-20</lastmod>
   </url>
   <url>
@@ -177,11 +177,11 @@
     <lastmod>2023-11-20</lastmod>
   </url>
   <url>
-    <loc>http://example.com/2020/08/19/common-rules-about-gitignore-file/</loc>
+    <loc>http://example.com/2020/10/02/common-git-tag-usage/</loc>
     <lastmod>2023-11-20</lastmod>
   </url>
   <url>
-    <loc>http://example.com/2020/10/02/common-git-tag-usage/</loc>
+    <loc>http://example.com/2020/08/19/common-rules-about-gitignore-file/</loc>
     <lastmod>2023-11-20</lastmod>
   </url>
   <url>
@@ -193,11 +193,11 @@
     <lastmod>2023-11-20</lastmod>
   </url>
   <url>
-    <loc>http://example.com/2020/10/10/a-solution-to-raw.githubusercontent.com-connection-refuse/</loc>
+    <loc>http://example.com/2020/05/08/a-simple-example-to-upload-file-using-ajax/</loc>
     <lastmod>2023-11-20</lastmod>
   </url>
   <url>
-    <loc>http://example.com/2020/05/08/a-simple-example-to-upload-file-using-ajax/</loc>
+    <loc>http://example.com/2020/10/10/a-solution-to-raw.githubusercontent.com-connection-refuse/</loc>
     <lastmod>2023-11-20</lastmod>
   </url>
   <url>
@@ -277,11 +277,11 @@
     <lastmod>2020-03-30</lastmod>
   </url>
   <url>
-    <loc>http://example.com/2020/02/24/python-star-operator/</loc>
+    <loc>http://example.com/2020/02/26/python-use-defaultdict-to-reduce-code/</loc>
     <lastmod>2020-03-30</lastmod>
   </url>
   <url>
-    <loc>http://example.com/2020/02/26/python-use-defaultdict-to-reduce-code/</loc>
+    <loc>http://example.com/2020/02/24/python-star-operator/</loc>
     <lastmod>2020-03-30</lastmod>
   </url>
   <url>

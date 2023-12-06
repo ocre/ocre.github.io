@@ -93,6 +93,29 @@
   </entry>
   
   <entry>
+    <title>如何用系统命令把文件内容复制到剪贴板</title>
+    <link href="http://example.com/2023/11/20/how-to-copy-file-content-to-clipboard/"/>
+    <id>http://example.com/2023/11/20/how-to-copy-file-content-to-clipboard/</id>
+    <published>2023-11-20T04:15:32.000Z</published>
+    <updated>2023-11-20T03:11:55.399Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;换电脑后需要给&lt;code&gt;github&lt;/code&gt;配置新的&lt;code&gt;ssh key&lt;/code&gt;以便于通过&lt;code&gt;ssh&lt;/code&gt;协议免密&lt;code&gt;push&lt;/code&gt;代码。使用&lt;code&gt;ssh-keygen -t rsa -C</summary>
+        
+      
+    
+    
+    
+    
+    <category term="DevOps" scheme="http://example.com/tags/DevOps/"/>
+    
+  </entry>
+  
+  <entry>
     <title>pandas中如何合并DataFrame的两列</title>
     <link href="http://example.com/2023/11/20/how-to-merge-two-dataframe-columns-with-pandas/"/>
     <id>http://example.com/2023/11/20/how-to-merge-two-dataframe-columns-with-pandas/</id>
@@ -115,29 +138,6 @@
     <category term="Python" scheme="http://example.com/tags/Python/"/>
     
     <category term="数据分析" scheme="http://example.com/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何用系统命令把文件内容复制到剪贴板</title>
-    <link href="http://example.com/2023/11/20/how-to-copy-file-content-to-clipboard/"/>
-    <id>http://example.com/2023/11/20/how-to-copy-file-content-to-clipboard/</id>
-    <published>2023-11-20T04:15:32.000Z</published>
-    <updated>2023-11-20T03:11:55.399Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;换电脑后需要给&lt;code&gt;github&lt;/code&gt;配置新的&lt;code&gt;ssh key&lt;/code&gt;以便于通过&lt;code&gt;ssh&lt;/code&gt;协议免密&lt;code&gt;push&lt;/code&gt;代码。使用&lt;code&gt;ssh-keygen -t rsa -C</summary>
-        
-      
-    
-    
-    
-    
-    <category term="DevOps" scheme="http://example.com/tags/DevOps/"/>
     
   </entry>
   
