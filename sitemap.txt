@@ -1,3 +1,4 @@
+http://example.com/2023/12/14/how-to-find-linux-release-version/
 http://example.com/about/index.html
 http://example.com/categories/index.html
 http://example.com/tags/index.html

@@ -2409,4 +2409,22 @@
         <tag>Database</tag>
       </tags>
   </entry>
+  <entry>
+    <title>如何查看Linux系统版本</title>
+    <url>/2023/12/14/how-to-find-linux-release-version/</url>
+    <content><![CDATA[<p>最近老是碰到需要确认linux发行版本的需求，自己记不住，每次都去查bing，查烦了。特意搜集整理、记录一下。<br>总的来说，以下这么几种方法搭配使用，效果更佳。</p>
+<ul>
+<li><code>cat /etc/*-release</code> – 感觉这个最靠谱，红帽的、ubuntu的甚至国产的发行版，一般能查出来。</li>
+<li><code>cat /etc/issue</code> – 有时候啥有用信息也没有，查了个寂寞。</li>
+<li><code>lsb_release</code> – 不少发行版不支持，聊胜于无吧。</li>
+<li><code>uname -a</code> – 能看到一些信息吧，比如是 x86_64 架构的，甚至发行版名称也有。</li>
+<li><code>cat /proc/version</code> – 感觉跟uname差不多。</li>
+<li><code>dmesg | grep &quot;Linux&quot;</code>  – 难记，不常用</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>DevOps</tag>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
 </search>

@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-12-04T02:02:50.322Z</updated>
+  <updated>2023-12-14T03:03:23.140Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何查看Linux系统版本</title>
+    <link href="http://example.com/2023/12/14/how-to-find-linux-release-version/"/>
+    <id>http://example.com/2023/12/14/how-to-find-linux-release-version/</id>
+    <published>2023-12-14T02:54:32.000Z</published>
+    <updated>2023-12-14T03:03:23.140Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;最近老是碰到需要确认linux发行版本的需求，自己记不住，每次都去查bing，查烦了。特意搜集整理、记录一下。&lt;br&gt;总的来说，以下这么几种方法搭配使用，效果更佳。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;cat /etc/*-release&lt;/code&gt; –</summary>
+        
+      
+    
+    
+    
+    
+    <category term="DevOps" scheme="http://example.com/tags/DevOps/"/>
+    
+    <category term="Linux" scheme="http://example.com/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>pandas DataFrame替换指定列的nan</title>
@@ -474,29 +501,6 @@
         
         
     <summary type="html">&lt;h4 id=&quot;while-true-scanner-nextInt-导致InputMismatchException-死循环问题&quot;&gt;&lt;a href=&quot;#while-true-scanner-nextInt-导致InputMismatchException-死循环问题&quot;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="Java" scheme="http://example.com/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java序列化多个对象到文件并正确读写的技巧</title>
-    <link href="http://example.com/2020/08/19/java-serialize-and-deserialize-multiple-objects/"/>
-    <id>http://example.com/2020/08/19/java-serialize-and-deserialize-multiple-objects/</id>
-    <published>2020-08-19T13:45:03.000Z</published>
-    <updated>2023-11-20T02:27:39.770Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;我们一般使用&lt;code&gt;ObjectInputStream&lt;/code&gt;的&lt;code&gt;Object</summary>
         
       
     
