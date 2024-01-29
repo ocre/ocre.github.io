@@ -2427,4 +2427,14 @@
         <tag>Linux</tag>
       </tags>
   </entry>
+  <entry>
+    <title>maven常用命令整理</title>
+    <url>/2024/01/29/maven-common-commands/</url>
+    <content><![CDATA[<p>记录一下maven常用命令，免得需要时到处乱找。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mvn -v //查看版本</span><br><span class="line">mvn archetype:create //创建 Maven 项目</span><br><span class="line">mvn compile //编译源代码</span><br><span class="line">mvn test-compile //编译测试代码</span><br><span class="line">mvn test //运行应用程序中的单元测试</span><br><span class="line">mvn site //生成项目相关信息的网站</span><br><span class="line">mvn package //依据项目生成 jar 文件</span><br><span class="line">mvn install //在本地 Repository 中安装 jar</span><br><span class="line">mvn -Dmaven.test.skip=true //忽略测试文档编译</span><br><span class="line">mvn clean //清除目标目录中的生成结果</span><br><span class="line">mvn clean compile //将.java类编译为.class文件</span><br><span class="line">mvn clean package //进行打包</span><br><span class="line">mvn clean test //执行单元测试</span><br><span class="line">mvn clean deploy //部署到版本仓库</span><br><span class="line">mvn clean install //使其他项目使用这个jar,会安装到maven本地仓库中</span><br><span class="line">mvn archetype:generate //创建项目架构</span><br><span class="line">mvn dependency:list //查看已解析依赖</span><br><span class="line">mvn dependency:tree //看到依赖树</span><br><span class="line">mvn dependency:analyze //查看依赖的工具</span><br><span class="line">mvn help:system //从中央仓库下载文件至本地仓库</span><br><span class="line">mvn help:active-profiles //查看当前激活的profiles</span><br><span class="line">mvn help:all-profiles //查看所有profiles</span><br><span class="line">mvn help:effective -pom //查看完整的pom信息</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>Tools</tag>
+      </tags>
+  </entry>
 </search>

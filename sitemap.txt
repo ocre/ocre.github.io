@@ -1,3 +1,4 @@
+http://example.com/2024/01/29/maven-common-commands/
 http://example.com/2023/12/14/how-to-find-linux-release-version/
 http://example.com/about/index.html
 http://example.com/categories/index.html

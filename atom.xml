@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-12-14T03:03:23.140Z</updated>
+  <updated>2024-01-29T05:25:22.261Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>maven常用命令整理</title>
+    <link href="http://example.com/2024/01/29/maven-common-commands/"/>
+    <id>http://example.com/2024/01/29/maven-common-commands/</id>
+    <published>2024-01-29T04:52:09.000Z</published>
+    <updated>2024-01-29T05:25:22.261Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;记录一下maven常用命令，免得需要时到处乱找。&lt;/p&gt;
+&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Tools" scheme="http://example.com/tags/Tools/"/>
+    
+  </entry>
   
   <entry>
     <title>如何查看Linux系统版本</title>
@@ -478,29 +502,6 @@
         
         
     <summary type="html">&lt;h4 id=&quot;Stream接口概念辨析&quot;&gt;&lt;a href=&quot;#Stream接口概念辨析&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="Java" scheme="http://example.com/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java捕获InputMismatchException陷入死循环的bug处理</title>
-    <link href="http://example.com/2020/09/12/a-InputMismatchException-problem/"/>
-    <id>http://example.com/2020/09/12/a-InputMismatchException-problem/</id>
-    <published>2020-09-12T09:13:23.000Z</published>
-    <updated>2023-11-20T02:27:39.757Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h4 id=&quot;while-true-scanner-nextInt-导致InputMismatchException-死循环问题&quot;&gt;&lt;a href=&quot;#while-true-scanner-nextInt-导致InputMismatchException-死循环问题&quot;</summary>
         
       
     
