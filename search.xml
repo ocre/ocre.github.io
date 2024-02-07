@@ -2475,12 +2475,8 @@
 <td align="center">Linux</td>
 <td align="center">Kylin Linux Advanced Server release V10 (Sword)</td>
 </tr>
-<tr>
-<td align="center">因为是编译安装，一切都是从源码开始，实际上跟CPU架构和操作系统版本关系不大。下面着重记录一下安装配置过程。</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
 </tbody></table>
+<p>因为是编译安装，一切都是从源码开始，实际上跟CPU架构和操作系统版本关系不大。下面着重记录一下安装配置过程。</p>
 <h2 id="安装redis前的准备工作"><a href="#安装redis前的准备工作" class="headerlink" title="安装redis前的准备工作"></a>安装redis前的准备工作</h2><h3 id="1-预期目标"><a href="#1-预期目标" class="headerlink" title="1. 预期目标"></a>1. 预期目标</h3><table>
 <thead>
 <tr>

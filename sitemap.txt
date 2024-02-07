@@ -1,5 +1,5 @@
-http://example.com/2024/02/07/configure-local-yum-repository-for-kylin-V10/
 http://example.com/2024/02/07/install-redis-6-on-kylin-linux-v10-sword/
+http://example.com/2024/02/07/configure-local-yum-repository-for-kylin-V10/
 http://example.com/2024/01/29/maven-common-commands/
 http://example.com/2023/12/14/how-to-find-linux-release-version/
 http://example.com/about/index.html

@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://example.com/2024/02/07/configure-local-yum-repository-for-kylin-V10/</loc>
+    <loc>http://example.com/2024/02/07/install-redis-6-on-kylin-linux-v10-sword/</loc>
     
     <lastmod>2024-02-07</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2024/02/07/install-redis-6-on-kylin-linux-v10-sword/</loc>
+    <loc>http://example.com/2024/02/07/configure-local-yum-repository-for-kylin-V10/</loc>
     
     <lastmod>2024-02-07</lastmod>
     
