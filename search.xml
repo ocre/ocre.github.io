@@ -2437,4 +2437,103 @@
         <tag>Tools</tag>
       </tags>
   </entry>
+  <entry>
+    <title>给麒麟V10配置本地离线yum源</title>
+    <url>/2024/02/07/configure-local-yum-repository-for-kylin-V10/</url>
+    <content><![CDATA[<p>我拿到的机器是一台Linux内网机，操作系统是麒麟V10, 由于需要自己在无网环境下安装一些软件，这些软件都或多或少依赖一些系统基础包，因此需要配置本地yum源。记录配置过程如下：</p>
+<h3 id="获取系统ios镜像文件"><a href="#获取系统ios镜像文件" class="headerlink" title="获取系统ios镜像文件"></a>获取系统ios镜像文件</h3><p>这个需要自行获取。</p>
+<h2 id="挂载ios镜像"><a href="#挂载ios镜像" class="headerlink" title="挂载ios镜像"></a>挂载ios镜像</h2><p>我是让同事帮忙挂载的，大体步骤如下</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 先挂载ios文件</span><br><span class="line">mount /root/upload/Kylin-Server-10-SP2-aarch64-Release-Build09-20210524.iso /run/media/root/Kylin-Server-10</span><br><span class="line"># 再挂载cdrom设备</span><br><span class="line">mount /dev/sr0 /run/media/root/Kylin-Server-10</span><br><span class="line"># 查看挂载点</span><br><span class="line">df -h</span><br><span class="line"># 可以像普通目录一样查看ios文件内容</span><br><span class="line">ls /run/media/root/Kylin-Server-10</span><br></pre></td></tr></table></figure>
+
+<h2 id="备份yum源"><a href="#备份yum源" class="headerlink" title="备份yum源"></a>备份yum源</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd /etc/yum.repo.d/</span><br><span class="line">mkdir backup</span><br><span class="line">mv *.repo backup</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置本地源"><a href="#配置本地源" class="headerlink" title="配置本地源"></a>配置本地源</h2><p>创建<code>xxx.repo</code>文件并设置内容：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cat &gt; /etc/yum.repos.d/local.repo &lt;&lt; EOF </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">##Kylin Linux Advanced Server 10 - os repo###</span></span></span><br><span class="line"></span><br><span class="line">[ks10-adv-os]</span><br><span class="line">name = Kylin Linux Advanced Server 10 - Os</span><br><span class="line">baseurl = file:///run/media/root/Kylin-Server-10</span><br><span class="line">gpgcheck = 1</span><br><span class="line">gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-kylin</span><br><span class="line">enabled = 1</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+<p>更新yum源：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum clean all</span><br><span class="line">yum makecache</span><br><span class="line">yum list</span><br></pre></td></tr></table></figure>
+<p>完毕！</p>
+]]></content>
+      <tags>
+        <tag>Linux</tag>
+        <tag>yum</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在麒麟V10编译安装redis 6.x</title>
+    <url>/2024/02/07/install-redis-6-on-kylin-linux-v10-sword/</url>
+    <content><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>现需要在一台信创虚拟机安装redis 6.x, 未找到二进制包版本，因此需要自行编译安装。<br>服务器环境如下：</p>
+<table>
+<thead>
+<tr>
+<th align="center">CPU架构</th>
+<th align="center">系统类别</th>
+<th align="center">系统发行版本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">x86_64</td>
+<td align="center">Linux</td>
+<td align="center">Kylin Linux Advanced Server release V10 (Sword)</td>
+</tr>
+<tr>
+<td align="center">因为是编译安装，一切都是从源码开始，实际上跟CPU架构和操作系统版本关系不大。下面着重记录一下安装配置过程。</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h2 id="安装redis前的准备工作"><a href="#安装redis前的准备工作" class="headerlink" title="安装redis前的准备工作"></a>安装redis前的准备工作</h2><h3 id="1-预期目标"><a href="#1-预期目标" class="headerlink" title="1. 预期目标"></a>1. 预期目标</h3><table>
+<thead>
+<tr>
+<th align="center">目标项</th>
+<th align="center">目标值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">安装目录</td>
+<td align="center">&#x2F;usr&#x2F;local&#x2F;redis</td>
+</tr>
+<tr>
+<td align="center">支持TLS</td>
+<td align="center">是</td>
+</tr>
+<tr>
+<td align="center">支持远程访问</td>
+<td align="center">否</td>
+</tr>
+<tr>
+<td align="center">支持免密访问</td>
+<td align="center">否</td>
+</tr>
+<tr>
+<td align="center">集群部署</td>
+<td align="center">暂不考虑</td>
+</tr>
+</tbody></table>
+<h3 id="2-编译环境准备"><a href="#2-编译环境准备" class="headerlink" title="2. 编译环境准备"></a>2. 编译环境准备</h3><p>主要是准备好gcc编译器。<br>一般来说麒麟V10已经自带gcc，我机器上gcc版本是7.3.0，版本已经比<code>CentOS 7.x</code>的<code>4.8.5</code>新了，本着够用就好的原则，没有升级到高版本的必要。</p>
+<h3 id="3-准备依赖包"><a href="#3-准备依赖包" class="headerlink" title="3. 准备依赖包"></a>3. 准备依赖包</h3><p>主要是<code>openssl</code>库。如果redis不使用<code>TLS</code>模式的话，本步骤可以跳过。<br>我机器上已经自带了<code>OpenSSL 1.1.1f</code>版本，只需要额外安装<code>openssl-devel</code>库即可。<br>偷懒选择<code>yum</code>方式安装。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum -y install openssl-devel</span><br></pre></td></tr></table></figure>
+<p>这里简单说明一下，机器是离线的，但事先配置好了本地yum源<a href="/2024/02/07/configure-local-yum-repository-for-kylin-V10/" title="给麒麟V10配置本地离线yum源">本地yum源配置方法看这里</a>，所以可以用<code>yum install</code>来安装一些系统镜像里自带的库。</p>
+<h2 id="编译安装redis"><a href="#编译安装redis" class="headerlink" title="编译安装redis"></a>编译安装redis</h2><h3 id="1-准备官网源码"><a href="#1-准备官网源码" class="headerlink" title="1. 准备官网源码"></a>1. 准备官网源码</h3><p>先从官网（<a href="http://download.redis.io/releases/%EF%BC%89%E4%B8%8B%E8%BD%BD%E5%AF%B9%E5%BA%94%E7%89%88%E6%9C%AC%E6%BA%90%E7%A0%81%E5%8C%85%E3%80%82">http://download.redis.io/releases/）下载对应版本源码包。</a> 我下载的是<code>6.2.14</code>版本，下面的记录都以这个版本为准。<br>上传压缩包到安装目标机器，使用<code>tar xvfz redis-6.2.14.tar.gz</code>解压。<br>解压后目录为：<code>redis-6.2.14</code></p>
+<h3 id="2-编译安装"><a href="#2-编译安装" class="headerlink" title="2. 编译安装"></a>2. 编译安装</h3><p>依次执行如下命令进行编译：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">进入源码目录</span></span><br><span class="line">cd redis-6.2.14</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">先编译deps子目录下的依赖库</span></span><br><span class="line">cd deps</span><br><span class="line">make -j4 hiredis lua jemalloc linenoise</span><br><span class="line">cd ..</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">编译（启用TLS支持，这个参数可选）</span></span><br><span class="line">make -j4 BUILD_TLS=yes</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">测试一下，这个命令执行时间较长</span></span><br><span class="line">make test</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装到自定义目录</span></span><br><span class="line">make install PREFIX=/usr/local/redis</span><br></pre></td></tr></table></figure>
+<p><code>make</code>过程中可能会出现各种问题，这里就要具体问题具体分析了。一般都是因为缺少lib库，或者没有事先编译deps目录下的依赖库造成的，根据错误提示找找缺少的库文件等等，缺啥补啥，然后<code>make distclean</code>后重新make，大概率能解决。</p>
+<h2 id="配置redis服务"><a href="#配置redis服务" class="headerlink" title="配置redis服务"></a>配置redis服务</h2><h3 id="设置配置文件"><a href="#设置配置文件" class="headerlink" title="设置配置文件"></a>设置配置文件</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">在安装目录下创建子目录：</span></span><br><span class="line">mkdir /usr/local/redis/conf</span><br><span class="line">mkdir /usr/local/redis/data</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">从源码目录copy配置文件`redis.conf`到安装目录的`conf`子目录</span></span><br><span class="line">cd redis-6.2.14</span><br><span class="line">cp redis.conf /usr/local/redis/conf</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">根据预先规划需要，编辑redis.conf</span></span><br><span class="line">vim redis.conf</span><br></pre></td></tr></table></figure>
+<p>主要修改配置项包括：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 只开启本地监听</span><br><span class="line">bind 127.0.0.1 -::1</span><br><span class="line">protected-mode yes</span><br><span class="line">port 6379</span><br><span class="line">daemonize yes</span><br><span class="line">pidfile /var/run/redis_6379.pid</span><br><span class="line">logfile &quot;&quot;</span><br><span class="line">dir /usr/local/redis/data</span><br><span class="line">requirepass &quot;密码&quot;</span><br></pre></td></tr></table></figure>
+<p>使用<code>cat /usr/local/redis/conf/redis.conf |grep -v &quot;^#&quot;|grep -v &quot;^$&quot;</code>命令得到完整有效的配置项如下（已过滤注释），供参考：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bind 127.0.0.1 -::1</span><br><span class="line">protected-mode yes</span><br><span class="line">port 6379</span><br><span class="line">tcp-backlog 511</span><br><span class="line">timeout 0</span><br><span class="line">tcp-keepalive 300</span><br><span class="line">daemonize yes</span><br><span class="line">pidfile /var/run/redis_6379.pid</span><br><span class="line">loglevel notice</span><br><span class="line">logfile &quot;&quot;</span><br><span class="line">databases 16</span><br><span class="line">always-show-logo no</span><br><span class="line">set-proc-title yes</span><br><span class="line">proc-title-template &quot;&#123;title&#125; &#123;listen-addr&#125; &#123;server-mode&#125;&quot;</span><br><span class="line">stop-writes-on-bgsave-error yes</span><br><span class="line">rdbcompression yes</span><br><span class="line">rdbchecksum yes</span><br><span class="line">dbfilename dump.rdb</span><br><span class="line">rdb-del-sync-files no</span><br><span class="line">dir /usr/local/redis/data</span><br><span class="line">replica-serve-stale-data yes</span><br><span class="line">replica-read-only yes</span><br><span class="line">repl-diskless-sync no</span><br><span class="line">repl-diskless-sync-delay 5</span><br><span class="line">repl-diskless-load disabled</span><br><span class="line">repl-disable-tcp-nodelay no</span><br><span class="line">replica-priority 100</span><br><span class="line">acllog-max-len 128</span><br><span class="line">requirepass &quot;jgDWw**RxRG&amp;%#J3&quot;</span><br><span class="line">lazyfree-lazy-eviction no</span><br><span class="line">lazyfree-lazy-expire no</span><br><span class="line">lazyfree-lazy-server-del no</span><br><span class="line">replica-lazy-flush no</span><br><span class="line">lazyfree-lazy-user-del no</span><br><span class="line">lazyfree-lazy-user-flush no</span><br><span class="line">oom-score-adj no</span><br><span class="line">oom-score-adj-values 0 200 800</span><br><span class="line">disable-thp yes</span><br><span class="line">appendonly no</span><br><span class="line">appendfilename &quot;appendonly.aof&quot;</span><br><span class="line">appendfsync everysec</span><br><span class="line">no-appendfsync-on-rewrite no</span><br><span class="line">auto-aof-rewrite-percentage 100</span><br><span class="line">auto-aof-rewrite-min-size 64mb</span><br><span class="line">aof-load-truncated yes</span><br><span class="line">aof-use-rdb-preamble yes</span><br><span class="line">lua-time-limit 5000</span><br><span class="line">slowlog-log-slower-than 10000</span><br><span class="line">slowlog-max-len 128</span><br><span class="line">latency-monitor-threshold 0</span><br><span class="line">notify-keyspace-events &quot;&quot;</span><br><span class="line">hash-max-ziplist-entries 512</span><br><span class="line">hash-max-ziplist-value 64</span><br><span class="line">list-max-ziplist-size -2</span><br><span class="line">list-compress-depth 0</span><br><span class="line">set-max-intset-entries 512</span><br><span class="line">zset-max-ziplist-entries 128</span><br><span class="line">zset-max-ziplist-value 64</span><br><span class="line">hll-sparse-max-bytes 3000</span><br><span class="line">stream-node-max-bytes 4096</span><br><span class="line">stream-node-max-entries 100</span><br><span class="line">activerehashing yes</span><br><span class="line">client-output-buffer-limit normal 0 0 0</span><br><span class="line">client-output-buffer-limit replica 256mb 64mb 60</span><br><span class="line">client-output-buffer-limit pubsub 32mb 8mb 60</span><br><span class="line">hz 10</span><br><span class="line">dynamic-hz yes</span><br><span class="line">aof-rewrite-incremental-fsync yes</span><br><span class="line">rdb-save-incremental-fsync yes</span><br><span class="line">jemalloc-bg-thread yes</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置开机启动"><a href="#配置开机启动" class="headerlink" title="配置开机启动"></a>配置开机启动</h3><p>新建或编辑一个启动配置文件：<code>vim /lib/systemd/system/redis.service</code><br>文件内容如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=Redis</span><br><span class="line">After=network.target</span><br><span class="line">[Service]</span><br><span class="line">Type=forking</span><br><span class="line">PIDFile=/var/run/redis_6379.pid</span><br><span class="line">ExecStart=/usr/local/redis/bin/redis-server /usr/local/redis/conf/redis.conf</span><br><span class="line">ExecReload=/bin/kill -s HUP $MAINPID</span><br><span class="line">ExecStop=/bin/kill -s QUIT $MAINPID</span><br><span class="line">PrivateTmp=true</span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+<p>然后执行：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl enable redis</span><br><span class="line">systemctl start redis</span><br><span class="line">systemctl status redis</span><br></pre></td></tr></table></figure>
+
+<h3 id="测试验证"><a href="#测试验证" class="headerlink" title="测试验证"></a>测试验证</h3><p>下面列一下我用来验证redis的命令, 供参考：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">打开命令行客户端</span></span><br><span class="line">cd /usr/local/redis</span><br><span class="line">bin/redis-cli</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">输入密码完成认证</span></span><br><span class="line">auth &quot;密码&quot;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">选择db 0</span></span><br><span class="line">select 0</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">设置键值对 a:10</span></span><br><span class="line">set a 10</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">获取所有key</span></span><br><span class="line">keys *</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">获取a的值</span></span><br><span class="line">get a</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">删除键值对a</span></span><br><span class="line">del a</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">获取所有key</span></span><br><span class="line">keys *</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">退出客户端</span></span><br><span class="line">quit</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>Linux</tag>
+        <tag>redis</tag>
+      </tags>
+  </entry>
 </search>

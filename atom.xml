@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-01-29T05:25:22.261Z</updated>
+  <updated>2024-02-07T05:39:55.523Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,57 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在麒麟V10编译安装redis 6.x</title>
+    <link href="http://example.com/2024/02/07/install-redis-6-on-kylin-linux-v10-sword/"/>
+    <id>http://example.com/2024/02/07/install-redis-6-on-kylin-linux-v10-sword/</id>
+    <published>2024-02-07T01:38:21.000Z</published>
+    <updated>2024-02-07T05:39:55.523Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;现需要在一台信创虚拟机安装redis 6.x,</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Linux" scheme="http://example.com/tags/Linux/"/>
+    
+    <category term="redis" scheme="http://example.com/tags/redis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>给麒麟V10配置本地离线yum源</title>
+    <link href="http://example.com/2024/02/07/configure-local-yum-repository-for-kylin-V10/"/>
+    <id>http://example.com/2024/02/07/configure-local-yum-repository-for-kylin-V10/</id>
+    <published>2024-02-07T00:29:21.000Z</published>
+    <updated>2024-02-07T05:41:19.755Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;我拿到的机器是一台Linux内网机，操作系统是麒麟V10, 由于需要自己在无网环境下安装一些软件，这些软件都或多或少依赖一些系统基础包，因此需要配置本地yum源。记录配置过程如下：&lt;/p&gt;
+&lt;h3 id=&quot;获取系统ios镜像文件&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Linux" scheme="http://example.com/tags/Linux/"/>
+    
+    <category term="yum" scheme="http://example.com/tags/yum/"/>
+    
+  </entry>
   
   <entry>
     <title>maven常用命令整理</title>
@@ -458,57 +509,6 @@
     
     
     <category term="Tools" scheme="http://example.com/tags/Tools/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>面向对象的常用设计原则</title>
-    <link href="http://example.com/2020/09/15/java-oop-7-principles/"/>
-    <id>http://example.com/2020/09/15/java-oop-7-principles/</id>
-    <published>2020-09-15T07:19:23.000Z</published>
-    <updated>2023-11-20T02:27:39.769Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;世上唯一不变的是变化。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;相对于其他实物，软件从写下第一行代码开始就不断反复变化。为了应对各种变化，需要一些通用的设计原则和模式来指导日常开发。&lt;br&gt;面向对象诞生至今早已超过半个世纪，大量前辈们早就探索和总</summary>
-        
-      
-    
-    
-    
-    
-    <category term="Java" scheme="http://example.com/tags/Java/"/>
-    
-    <category term="设计模式" scheme="http://example.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java Stream接口学习笔记</title>
-    <link href="http://example.com/2020/09/15/java-stream-interface-note/"/>
-    <id>http://example.com/2020/09/15/java-stream-interface-note/</id>
-    <published>2020-09-15T06:11:23.000Z</published>
-    <updated>2023-11-20T02:27:39.770Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h4 id=&quot;Stream接口概念辨析&quot;&gt;&lt;a href=&quot;#Stream接口概念辨析&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="Java" scheme="http://example.com/tags/Java/"/>
     
   </entry>
   
